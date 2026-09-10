@@ -1,75 +1,41 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Projects — Guijia Zhang</title>
-  <meta name="description" content="Selected research software and engineering projects by Guijia Zhang." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Research &amp; Engineering — Guijia Zhang</title>
+  <meta name="description" content="Research software and engineering projects by Guijia Zhang: FarField, agent security infrastructure, evaluation pipelines, and deployed AI workflows.">
+  <meta name="theme-color" content="#fdfcf9">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Research &amp; Engineering — Guijia Zhang">
+  <meta property="og:description" content="Research software and engineering projects by Guijia Zhang: FarField, agent security infrastructure, evaluation pipelines, and deployed AI workflows.">
+  <meta property="og:url" content="https://123zgj123.github.io/projects.html">
+  <link rel="canonical" href="https://123zgj123.github.io/projects.html">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
-<div class="layout">
-
-  <aside class="sidebar">
-    <div class="portrait" aria-label="Guijia Zhang">GZ</div>
-    <h1>Guijia Zhang</h1>
-    <nav>
-      <a href="index.html">About</a>
-      <a href="publications.html">Publications</a>
-      <a href="experience.html">Experience</a>
-      <a href="projects.html" class="active">Projects</a>
-      <a href="awards.html">Honors &amp; Awards</a>
-    </nav>
-    <div class="contact">
-      <a href="mailto:2022040399@email.szu.edu.cn">Email</a>
-      <a href="https://github.com/123zgj123" target="_blank" rel="noopener">GitHub</a>
-      <a href="https://scholar.google.com/citations?user=21U3-xUAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener">Scholar</a>
-      <a href="assets/cv.pdf" target="_blank" rel="noopener">Curriculum Vitae</a>
-    </div>
-    <div class="copyright">&copy; 2026 Guijia Zhang<br />Last updated August 2026</div>
-  </aside>
-
-  <main>
-    <div class="content">
-
-      <section id="projects">
-        <h2>Selected Projects</h2>
-
-        <div class="proj featured-proj">
-          <div class="name">FarField<span class="tech">Python 3.11 · standard library</span></div>
-          <p>A local research loop that turns a topic into a falsifiable hypothesis and a reproducible experiment protocol. The model may propose claims and scripts; graph checks, prior-art checks, dataset binding, and two-arm arithmetic remain ordinary Python.</p>
-          <div class="proj-links">
-            <a href="https://github.com/123zgj123/FarField" target="_blank" rel="noopener">github.com/123zgj123/FarField ↗</a>
-          </div>
-        </div>
-
-        <div class="proj">
-          <div class="name">OpenClaw Security Suite<span class="tech">TypeScript · Node.js · Vitest</span></div>
-          <p>An end-to-end security layer for an open-source agent gateway: a persistent audit-event store with signed integrity verification, a rule-driven alert system with webhook/Slack/Discord/Telegram channels, a configurable skills sandbox with per-skill policies, and a security dashboard served through eleven permission-scoped RPC methods.</p>
-        </div>
-
-        <div class="proj">
-          <div class="name">IntelliSelect: AI-Assisted Faculty Recruitment Pre-Screening<span class="tech">FastAPI · React 19 · vLLM (Qwen3-14B) · Docker</span></div>
-          <p>A full-stack &ldquo;smart assistant, human in charge&rdquo; pipeline for HKUST (Guangzhou) that turns subjective resume pre-screening into a multi-source, auditable, and explainable workflow, combining five-dimension LLM scoring on a self-hosted vLLM, deterministic rule-based matching, and Google Scholar peer-group benchmarking.</p>
-        </div>
-
-        <div class="proj">
-          <div class="name">Legal Pilot 2.0: Intelligent Contract Review<span class="tech">Qwen3-235B · FastAPI</span></div>
-          <p>A dual-stage contract-review workflow (legal red-line scan followed by rule-by-rule audit) integrating rule constraints, risk localization, and revision suggestions, with LLM-based sensitive-entity detection, deterministic pre-masking, and length-preserving replacement for privacy protection.</p>
-        </div>
-
-        <div class="proj">
-          <div class="name">Agentic RAG and Memory Systems<span class="tech">PyTorch · Hugging Face · Faiss · Milvus</span></div>
-          <p>A long-context, cross-topic retrieval benchmark and enhancement pipeline, together with SFT data construction from browser-agent trajectories under task-level supervision.</p>
-        </div>
-      </section>
-
-    </div>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header wrap">
+    <a class="wordmark" href="index.html">Guijia Zhang</a>
+    <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button>
+    <nav id="site-navigation" class="site-nav" aria-label="Main navigation"><a href="index.html">About</a>
+<a href="publications.html">Publications</a>
+<a href="experience.html">Experience</a>
+<a href="projects.html" aria-current="page">Projects</a>
+<a href="awards.html">Honors</a></nav>
+  </header>
+  <main id="main" class="wrap" tabindex="-1">
+<header class="page-heading"><h1>Research &amp; engineering</h1><p>Systems I have built to study agents, evaluate their behavior, and support real workflows.</p></header><article class="project" id="farfield"><div><h2>FarField</h2><p class="tech">Python 3.11 · standard library</p><div class="link-row"><a href="https://github.com/123zgj123/FarField" target="_blank" rel="noopener noreferrer">Repository ↗</a></div></div><div><p class="project-description">A reproducible research loop, from a question to an experiment.</p><dl><dt>Problem</dt><dd>Turning a broad topic into a falsifiable hypothesis and a registered, two-arm experiment protocol.</dd><dt>Implementation</dt><dd>Built a local workflow in which the model proposes claims and scripts, while graph checks, prior-art checks, dataset binding, and experimental arithmetic remain ordinary Python.</dd></dl></div></article><article class="project" id="openclaw"><div><h2>OpenClaw Security Suite</h2><p class="tech">TypeScript · Node.js · Vitest</p></div><div><p class="project-description">Security infrastructure for a tool-using agent gateway.</p><dl><dt>Problem</dt><dd>Making agent actions inspectable and skill execution subject to explicit policies.</dd><dt>Implementation</dt><dd>A persistent audit-event store with signed integrity checks; rule-based alerts across webhook, Slack, Discord, and Telegram; a configurable skills sandbox; and a security dashboard with eleven permission-scoped RPC methods.</dd></dl></div></article><article class="project" id="intelliselect"><div><h2>IntelliSelect</h2><p class="tech">FastAPI · React 19 · vLLM · Docker</p></div><div><p class="project-description">An auditable assistant for faculty recruitment pre-screening at HKUST (Guangzhou).</p><dl><dt>Problem</dt><dd>Combining evidence from multiple sources while keeping recruitment decisions with people.</dd><dt>Implementation</dt><dd>Integrated five-dimension scoring with a self-hosted Qwen3-14B model, deterministic matching rules, and Google Scholar peer-group benchmarking in a full-stack application.</dd></dl></div></article><article class="project" id="legal-pilot"><div><h2>Legal Pilot 2.0</h2><p class="tech">Qwen3-235B · FastAPI</p></div><div><p class="project-description">A two-stage workflow for reviewing contracts.</p><dl><dt>Problem</dt><dd>Locating legal risks and suggesting revisions while protecting sensitive information.</dd><dt>Implementation</dt><dd>Combined a legal red-line scan with rule-by-rule auditing, then added sensitive-entity detection, deterministic pre-masking, and length-preserving replacement.</dd></dl></div></article><article class="project" id="memory"><div><h2>Agentic RAG &amp; Memory Systems</h2><p class="tech">PyTorch · Hugging Face · Faiss · Milvus</p></div><div><p class="project-description">Evaluation and data pipelines for agents working across long contexts.</p><dl><dt>Problem</dt><dd>Understanding information-recall failures, context drift, and task-level memory needs.</dd><dt>Implementation</dt><dd>Built a long-context, cross-topic retrieval benchmark and enhancement pipeline, and converted browser-agent trajectories into task-level SFT data.</dd></dl></div></article>
   </main>
-
-</div>
+  <footer class="site-footer wrap">
+    <div class="footer-top"><p>Let’s talk research.</p><div class="link-row"><a href="mailto:2022040399@email.szu.edu.cn">Email</a>
+<a href="https://scholar.google.com/citations?user=21U3-xUAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a>
+<a href="https://github.com/123zgj123" target="_blank" rel="noopener noreferrer">GitHub</a>
+<a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">CV <span class="sr-only">(PDF)</span></a></div></div>
+    <div class="footer-bottom"><span>© 2026 Guijia Zhang</span><span>Last updated September 2026</span></div>
+  </footer>
 </body>
 </html>

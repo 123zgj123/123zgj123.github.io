@@ -1,38 +1,45 @@
-# Guijia Zhang — Personal Homepage
+# Guijia Zhang — Academic Homepage
 
-个人学术主页，纯静态 HTML/CSS，无需任何构建工具，直接托管在 GitHub Pages。
+A static academic website, built with HTML, CSS, and a small progressively enhanced JavaScript file. No build step, framework, analytics, or third-party runtime is required.
 
-顶部固定导航 + 宽幅内容区。视觉保留深蓝与金色作为学术强调色，
-论文与软件入口优先于装饰。内容拆分为五个独立页面：
+## Pages
 
-- `index.html` — About + Selected Research + News
-- `publications.html` — 论文列表
-- `experience.html` — 科研经历 + 教育背景
-- `projects.html` — 研究软件与工程项目
-- `awards.html` — 奖项与培训
+- `index.html`: introduction, three selected papers, research software, and news.
+- `publications.html`: complete publication record, conference/preprint filters, expandable descriptions, and downloadable BibTeX citations.
+- `experience.html`: research and industry experience, followed by education.
+- `projects.html`: engineering projects organized around the problem and implementation.
+- `awards.html`: honors and additional training.
 
-公共样式在 `style.css`。修改导航或联系方式时，五个页面需要同步更新。
+Shared styles live in `style.css`; navigation and citation interactions live in `site.js`. The five pages contain their own semantic navigation and footer, so they remain readable without JavaScript. Keep these shared sections in sync when changing links.
 
-## 本地预览
+## Preview
 
-直接双击 `index.html`，或：
-
-```bash
-python3 -m http.server 8000
-# 打开 http://localhost:8000
+```sh
+python3 -m http.server 8000 --bind 127.0.0.1
 ```
 
-## 部署
+Open `http://127.0.0.1:8000`. GitHub Pages serves the same files without a build step. `.nojekyll` is intentional.
 
-GitHub 仓库：<https://github.com/123zgj123/123zgj123.github.io>
+## Content updates
 
-用户主页地址：<https://123zgj123.github.io/>。
+- Add papers to `publications.html` under the appropriate `data-category` section. The filters count entries automatically.
+- Keep the selected papers on `index.html` synchronized with the full publication list.
+- Store citations in `assets/citations/` and update both the downloadable file and the visible citation. Current BibTeX entries cite the public arXiv versions; they do not invent conference pagination or proceedings identifiers.
+- Add recent updates at the top of the homepage news list. Older updates remain in the native “Earlier notes” disclosure.
+- Replace `assets/cv.pdf` when the CV is updated. It is preserved unchanged in this redesign.
+- Update the visible footer date when editing content.
+- Research figures in `assets/eca.svg`, `assets/stars.svg`, and `assets/gui.svg` are explanatory schematics, not reproductions of experimental results. Their text, arrows, and accessible descriptions can be edited directly.
 
-## 后续可补充
+## Typography and accessibility
 
-- ECA（2605.19192）与 STARS（2604.10286）已标为 EMNLP 2026 Findings；
-  GUI Agents（2607.04334）仍为 preprint。正式 ACL anthology 链接公布后可替换 arXiv。
-- FarField：<https://github.com/123zgj123/FarField>
-- “Agent Skill Regulation” 和 “EchoRAG” 两篇暂无公开链接
-- 简历已放在 `assets/cv.pdf`
-- 当前头像采用 30 号圆章；如需本人照片，可放入 `assets/avatar.jpg` 并修改导航头像
+Source Serif 4 and Source Sans 3 are hosted locally under `assets/fonts/`; their SIL Open Font Licenses are included alongside them. The Latin subsets use system-font fallbacks for unsupported characters. Main colors and spacing are defined at the top of `style.css`.
+
+The site includes keyboard focus styles, a skip link, current-page navigation, an accessible mobile menu, reduced-motion support, print styles, and no-JavaScript fallbacks. Citation copying falls back to selecting the text when clipboard access is unavailable.
+
+## Editorial notes
+
+Public author lists for ECA, STARS, and the GUI-agents paper were checked against their arXiv records on 2026-09-10. The GUI-agents description reflects the updated preprint. The public STARS code link was added from the paper.
+
+Existing conference acceptance labels and records without public links were preserved from this repository. These are not newly verified venue claims. In particular, check the exact venue name for “Spatial Causal Prediction in Video” before the next content update. Some older records currently describe contribution roles instead of a full author list; add complete citations when available.
+
+The bundled CV still contains older submission/planning language, while the homepage reports ECA and STARS as accepted to EMNLP 2026 Findings. Reconcile those dates and statuses in the next CV revision. The exchange-student end date remains marked “expected” as in the original record.
