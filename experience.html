@@ -1,119 +1,16 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Experience — Guijia Zhang</title>
-  <meta name="description" content="Research collaborations, engineering experience, and education.">
-  <meta name="theme-color" content="#fdfcf9">
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Experience — Guijia Zhang">
-  <meta property="og:description" content="Research collaborations, engineering experience, and education.">
-  <meta property="og:url" content="https://123zgj123.github.io/experience.html">
-  <link rel="canonical" href="https://123zgj123.github.io/experience.html">
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  <script src="site.js" defer></script>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Experience — Guijia Zhang</title>
+<link rel="canonical" href="https://123zgj123.github.io/#experience">
+<meta http-equiv="refresh" content="0;url=index.html#experience">
+<script>
+  const legacy = {misc:'awards', 'earlier-title':'publications', 'review-title':'publications', 'conference-title':'publications'};
+  const fragment = location.hash.slice(1);
+  location.replace('index.html#' + (legacy[fragment] || fragment || 'experience'));
+</script>
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header wrap">
-    <a class="wordmark" href="index.html">Guijia Zhang</a>
-    <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button>
-    <nav id="site-navigation" class="site-nav" aria-label="Main navigation"><a href="index.html">About</a>
-<a href="publications.html">Publications</a>
-<a href="experience.html" aria-current="page">Experience</a>
-<a href="projects.html">Projects</a>
-<a href="awards.html">Honors</a></nav>
-  </header>
-  <main id="main" class="wrap" tabindex="-1">
-<header class="page-heading"><h1>Experience</h1><p>Research collaborations, engineering experience, and education.</p></header>
-
-      <section id="experience" class="experience-section">
-        <h2>Research Experience</h2>
-
-        <div class="exp">
-          <div class="head">
-            <h3 class="where">The Hong Kong University of Science and Technology</h3>
-            <span class="when">Feb 2026 &ndash; May 2026</span>
-          </div>
-          <div class="what">Remote Research Intern, Academy of Interdisciplinary Studies · Advisors: Prof. Huamin Qu, Yuzhe Shi</div>
-          <ul>
-            <li>Co-first-author work on agent skill regulation as procedural knowledge representation, modeling execution commitments, gate conditions, and recovery actions in human-written skills.</li>
-          </ul>
-        </div>
-
-        <div class="exp">
-          <div class="head">
-            <h3 class="where">King Abdullah University of Science and Technology (KAUST)</h3>
-            <span class="when">Jan 2026 &ndash; Present</span>
-          </div>
-          <div class="what">Remote Research Collaboration · Collaborators: Prof. Di Wang, Shu Yang</div>
-          <ul>
-            <li>Led the STARS project: formulated request-conditioned invocation safety, constructed SIA-Bench, designed the risk-auditing framework, and wrote the paper; ongoing collaboration on agent applications and runtime safety.</li>
-          </ul>
-        </div>
-
-        <div class="exp">
-          <div class="head">
-            <h3 class="where">HKUST (Guangzhou)</h3>
-            <span class="when">Dec 2025 &ndash; Jun 2026 (expected)</span>
-          </div>
-          <div class="what">Exchange Student · Advisor: Prof. Lei Chen · Agent memory and database systems</div>
-          <ul>
-            <li>Surveyed MemOS, MIRIX, AgentFold, Recursive Language Models, and ReasoningBank to identify bottlenecks in long-context memory retrieval, state updates, and long-horizon dependency modeling.</li>
-            <li>Built SFT data with BrowserAgent, converting multi-turn trajectories from turn-level to task-level supervision; studied trade-offs among memory write policies, state compression, and retrieval latency.</li>
-          </ul>
-        </div>
-
-        <div class="exp">
-          <div class="head">
-            <h3 class="where">DeepWisdom (MetaGPT)</h3>
-            <span class="when">Oct 2025 &ndash; Nov 2025</span>
-          </div>
-          <div class="what">Algorithm Evaluation Engineer Intern</div>
-          <ul>
-            <li>Contributed to multi-agent code-generation benchmarks and MGX product evaluation, designing process-level evaluation workflows and using failure-case analysis to identify reliability bottlenecks in production agents.</li>
-          </ul>
-        </div>
-
-        <div class="exp">
-          <div class="head">
-            <h3 class="where">Tsinghua University, HCI Lab</h3>
-            <span class="when">Dec 2024 &ndash; Aug 2025</span>
-          </div>
-          <div class="what">Remote Research Assistant · Advisors: Prof. Chun Yu, Prof. Yuanchun Shi</div>
-          <ul>
-            <li>Contributed to SynergyAdvisor, modeling expert&ndash;avatar co-evolution as a human&ndash;AI alignment problem with memory-aware decision making and expert-feedback-enhanced chain-of-thought optimization.</li>
-            <li>Worked on long-context, cross-topic agentic RAG: built a benchmark and retrieval-enhancement pipeline to analyze information-recall failures and context drift in complex dialogue.</li>
-          </ul>
-        </div>
-      </section>
-
-      <section id="education" class="experience-section">
-        <h2>Education</h2>
-
-        <div class="exp">
-          <div class="head">
-            <h3 class="where">Shenzhen University</h3>
-            <span class="when">Sep 2022 &ndash; Jun 2026</span>
-          </div>
-          <div class="what">B.Eng., Elite Innovation Program in Electronic Information Engineering</div>
-          <ul>
-            <li>Honors: Academician Scholarship; Star of Culture and Sports Award.</li>
-            <li>Core coursework: machine learning, artificial intelligence, computer networks, data structures, mathematical analysis, advanced algebra, stochastic processes.</li>
-          </ul>
-        </div>
-      </section>
-
-  </main>
-  <footer class="site-footer wrap">
-    <div class="footer-top"><p>Let’s talk research.</p><div class="link-row"><a href="mailto:2022040399@email.szu.edu.cn">Email</a>
-<a href="https://scholar.google.com/citations?user=21U3-xUAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-<a href="https://github.com/123zgj123" target="_blank" rel="noopener noreferrer">GitHub</a>
-<a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">CV <span class="sr-only">(PDF)</span></a></div></div>
-    <div class="footer-bottom"><span>© 2026 Guijia Zhang</span><span>Last updated September 2026</span></div>
-  </footer>
-</body>
+<body><p>This content is now part of the <a href="index.html#experience">single-page homepage</a>.</p></body>
 </html>

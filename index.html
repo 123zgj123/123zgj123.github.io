@@ -3,56 +3,740 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Guijia Zhang — Agent Security &amp; Reliable AI Systems</title>
-  <meta name="description" content="Guijia Zhang researches agent security, multimodal reasoning, and reliable agent systems. Selected papers, research software, and experience.">
-  <meta name="theme-color" content="#fdfcf9">
+  <title>Guijia Zhang 张桂嘉 — Trustworthy Agents, Evaluation &amp; Automated Research</title>
+  <meta name="description" content="Academic homepage of Guijia Zhang (张桂嘉). Research on trustworthy AI agents, evidence-carrying authorization, decision-aware LLM evaluation, and automated research systems.">
+  <meta name="theme-color" content="#0A101B">
   <meta property="og:type" content="website">
-  <meta property="og:title" content="Guijia Zhang — Agent Security &amp; Reliable AI Systems">
-  <meta property="og:description" content="Guijia Zhang researches agent security, multimodal reasoning, and reliable agent systems. Selected papers, research software, and experience.">
+  <meta property="og:title" content="Guijia Zhang 张桂嘉 — Trustworthy Agents, Evaluation &amp; Automated Research">
+  <meta property="og:description" content="Research on trustworthy AI agents, evidence-carrying authorization, decision-aware LLM evaluation, and automated research systems.">
   <meta property="og:url" content="https://123zgj123.github.io/">
   <link rel="canonical" href="https://123zgj123.github.io/">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" href="assets/fonts/source-serif-4.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css">
-  <script src="site.js" defer></script>
+  <link rel="preload" href="assets/fonts/source-sans-3.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="singlepage.css">
+  <script src="singlepage.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <header class="site-header wrap">
-    <a class="wordmark" href="index.html">Guijia Zhang</a>
-    <button class="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false">Menu <span aria-hidden="true">☰</span></button>
-    <nav id="site-navigation" class="site-nav" aria-label="Main navigation"><a href="index.html" aria-current="page">About</a>
-<a href="publications.html">Publications</a>
-<a href="experience.html">Experience</a>
-<a href="projects.html">Projects</a>
-<a href="awards.html">Honors</a></nav>
+  <div class="observatory-backdrop" data-temporal-symbol aria-hidden="true">
+    <div class="observatory-horizon"></div>
+    <div class="observatory-aurora-stage">
+      <div class="observatory-aurora-carrier">
+        <div class="observatory-aurora-lobe"></div>
+      </div>
+    </div>
+    <div class="sundial-3d-stage">
+      <div class="sundial-3d-assembly">
+        <svg class="sundial-plane-svg" viewBox="0 0 1000 1000" focusable="false" aria-hidden="true">
+          <defs>
+            <radialGradient id="sd-plate-grad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#70D4DE" stop-opacity="0.075"/>
+              <stop offset="54%" stop-color="#7E8CDC" stop-opacity="0.04"/>
+              <stop offset="84%" stop-color="#0E1622" stop-opacity="0.12"/>
+              <stop offset="100%" stop-color="#080D15" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="sd-wedge-grad" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#C5AD83" stop-opacity="0"/>
+              <stop offset="52%" stop-color="#70D4DE" stop-opacity="0.08"/>
+              <stop offset="100%" stop-color="#70D4DE" stop-opacity="0.13"/>
+            </radialGradient>
+            <linearGradient id="sd-shadow-grad" x1="50%" y1="50%" x2="15%" y2="85%">
+              <stop offset="0%" stop-color="#05080E" stop-opacity="0.42"/>
+              <stop offset="65%" stop-color="#080D15" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#080D15" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+          <circle class="sd-plate-fill" cx="500" cy="500" r="390"/>
+          <circle class="sd-rim-lower" cx="500" cy="514" r="392"/>
+          <circle class="sd-rim-upper" cx="500" cy="500" r="390"/>
+          <circle class="sd-meridian-ring" cx="500" cy="500" r="368"/>
+          <circle class="sd-meridian-ring" cx="500" cy="500" r="248"/>
+          <path class="sd-equatorial-arc" d="M 212 695 A 348 348 0 1 1 788 695"/>
+          <line class="sd-axis-line" x1="500" y1="96" x2="500" y2="904"/>
+          <line class="sd-axis-line" x1="96" y1="500" x2="904" y2="500"/>
+          <g class="sd-ticks">
+            <line class="sd-tick-major" x1="500" y1="110" x2="500" y2="136"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(15 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(30 500 500)"/>
+            <line class="sd-tick-major" x1="500" y1="110" x2="500" y2="134" transform="rotate(45 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(60 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(75 500 500)"/>
+            <line class="sd-tick-major" x1="500" y1="110" x2="500" y2="136" transform="rotate(90 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(105 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(120 500 500)"/>
+            <line class="sd-tick-major" x1="500" y1="110" x2="500" y2="134" transform="rotate(135 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(150 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(165 500 500)"/>
+            <line class="sd-tick-major" x1="500" y1="110" x2="500" y2="136" transform="rotate(180 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(195 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(210 500 500)"/>
+            <line class="sd-tick-major" x1="500" y1="110" x2="500" y2="134" transform="rotate(225 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(240 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(255 500 500)"/>
+            <line class="sd-tick-major" x1="500" y1="110" x2="500" y2="136" transform="rotate(270 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(285 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(300 500 500)"/>
+            <line class="sd-tick-major" x1="500" y1="110" x2="500" y2="134" transform="rotate(315 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(330 500 500)"/>
+            <line class="sd-tick-minor" x1="500" y1="110" x2="500" y2="126" transform="rotate(345 500 500)"/>
+          </g>
+          <g class="sd-shadow-carrier">
+            <polygon class="sd-cast-shadow" points="500,500 218,655 288,735"/>
+          </g>
+          <g class="sd-orbital-carrier">
+            <circle class="sd-orbital-ring" cx="500" cy="500" r="308"/>
+            <circle class="sd-orbital-subring" cx="500" cy="500" r="192"/>
+            <circle class="sd-orbital-node" cx="808" cy="500" r="4"/>
+            <circle class="sd-orbital-node" cx="192" cy="500" r="3"/>
+          </g>
+          <g class="sd-primary-carrier">
+            <g transform="rotate(-34 500 500)">
+              <path class="sd-lit-wedge" d="M 500 500 L 802 346 A 340 340 0 0 1 802 654 Z"/>
+              <path class="sd-trace-arc" d="M 684 316 A 260 260 0 0 1 736 610"/>
+              <line class="sd-trace-ray" x1="380" y1="500" x2="856" y2="500"/>
+              <circle class="sd-trace-reticle" cx="748" cy="500" r="9"/>
+              <circle class="sd-orbital-node" cx="856" cy="500" r="3.5"/>
+            </g>
+          </g>
+        </svg>
+        <svg class="sundial-orbit-svg" viewBox="0 0 1000 1000" focusable="false" aria-hidden="true">
+          <defs>
+            <linearGradient id="sd-orbit-light" x1="0%" y1="0%" x2="100%" y2="100%">
+              <stop offset="0%" stop-color="#70D4DE" stop-opacity="0.03"/>
+              <stop offset="34%" stop-color="#70D4DE" stop-opacity="0.25"/>
+              <stop offset="62%" stop-color="#A7A6F4" stop-opacity="0.32"/>
+              <stop offset="100%" stop-color="#7E8CDC" stop-opacity="0.04"/>
+            </linearGradient>
+          </defs>
+          <circle class="sd-elevated-orbit" cx="500" cy="500" r="416"/>
+          <g class="sd-orbital-carrier">
+            <circle class="sd-orbital-node" cx="916" cy="500" r="3.2"/>
+          </g>
+        </svg>
+        <svg class="sundial-gnomon-svg" viewBox="0 0 1000 1000" focusable="false" aria-hidden="true">
+          <defs>
+            <linearGradient id="sd-gnomon-lit" x1="0%" y1="100%" x2="100%" y2="0%">
+              <stop offset="0%" stop-color="#70D4DE" stop-opacity="0.08"/>
+              <stop offset="55%" stop-color="#C5AD83" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#D1E5FD" stop-opacity="0.28"/>
+            </linearGradient>
+            <linearGradient id="sd-gnomon-dark" x1="0%" y1="100%" x2="80%" y2="0%">
+              <stop offset="0%" stop-color="#0E1622" stop-opacity="0.28"/>
+              <stop offset="65%" stop-color="#7E8CDC" stop-opacity="0.14"/>
+              <stop offset="100%" stop-color="#70D4DE" stop-opacity="0.22"/>
+            </linearGradient>
+          </defs>
+          <polygon class="sd-gnomon-shadow-face" points="500,500 442,534 654,208"/>
+          <polygon class="sd-gnomon-lit-face" points="500,500 562,472 654,208"/>
+          <line class="sd-gnomon-strut" x1="500" y1="500" x2="592" y2="328"/>
+          <line class="sd-gnomon-spine" x1="500" y1="500" x2="654" y2="208"/>
+          <circle class="sd-core-ring" cx="654" cy="208" r="4.5"/>
+          <circle class="sd-core-ring" cx="500" cy="500" r="11"/>
+          <circle class="sd-core-dot" cx="500" cy="500" r="4"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <header class="site-header">
+    <nav class="top-nav" aria-label="Site navigation">
+      <ul class="nav-primary">
+        <li><a href="#about" data-nav-link>About</a></li>
+        <li><a href="#publications" data-nav-link>Publications</a></li>
+        <li><a href="#projects" data-nav-link>Software</a></li>
+        <li><a href="#experience" data-nav-link>Experience</a></li>
+        <li><a href="#education" data-nav-link>Education</a></li>
+        <li><a href="#awards" data-nav-link>Honors</a></li>
+        <li><a href="#contact" data-nav-link>Contact</a></li>
+      </ul>
+      <div class="nav-utility">
+        <button type="button" id="motion-toggle" class="motion-toggle" data-motion-toggle aria-pressed="false" hidden>Pause motion</button>
+        <a href="assets/cv.pdf">CV (PDF) ↗</a>
+      </div>
+    </nav>
   </header>
-  <main id="main" class="wrap" tabindex="-1">
-<section class="hero" aria-labelledby="intro-title"><div>
-<h1 id="intro-title">Guijia Zhang</h1>
-<p class="lead">I study how AI agents can act reliably.</p>
-<div class="intro-copy"><p>My research focuses on agent security, multimodal reasoning, and the systems that connect model decisions to real actions.</p><p>I work on evidence-based authorization, runtime safety auditing, and the evaluation of tool-using agents. I am interested in turning failures observed in working systems into questions we can test.</p></div>
-<div class="link-row"><a href="mailto:2022040399@email.szu.edu.cn">Email</a>
-<a href="https://scholar.google.com/citations?user=21U3-xUAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-<a href="https://github.com/123zgj123" target="_blank" rel="noopener noreferrer">GitHub</a>
-<a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">CV <span class="sr-only">(PDF)</span></a></div></div>
-<aside class="hero-note" aria-label="Research interests and education"><h2>Research interests</h2><ul><li>Agent security &amp; safety</li><li>Multimodal reasoning</li><li>Agent systems</li></ul><p class="education-note">B.Eng., Shenzhen University<br>Electronic Information Engineering</p></aside></section>
-<section id="research" class="section" aria-labelledby="research-title"><div class="section-heading"><h2 id="research-title">Selected research</h2><a href="publications.html">All publications →</a></div><article class="research-item"><figure class="research-figure"><img src="assets/eca.svg" width="420" height="200" alt="Evidence is verified before an action is authorized." loading="lazy"></figure><div><p class="venue">EMNLP 2026 · Findings</p><h3><a href="https://arxiv.org/abs/2605.19192" target="_blank" rel="noopener noreferrer">Hallucination as Exploit:<br>Evidence-Carrying Multimodal Agents</a></h3><p class="research-description">Requiring verifiable evidence before an agent takes a privileged action.</p><p class="authors"><span class="me">Guijia Zhang</span>, Hao Zheng, Harry Yang</p><div class="link-row"><a href="https://arxiv.org/abs/2605.19192" target="_blank" rel="noopener noreferrer">Paper ↗</a>
-<a href="https://arxiv.org/pdf/2605.19192" target="_blank" rel="noopener noreferrer">PDF ↗</a></div></div></article><article class="research-item"><figure class="research-figure"><img src="assets/stars.svg" width="420" height="200" alt="Request, skill, and runtime context feed a risk audit." loading="lazy"></figure><div><p class="venue">EMNLP 2026 · Findings</p><h3><a href="https://arxiv.org/abs/2604.10286" target="_blank" rel="noopener noreferrer">STARS</a></h3><p class="research-description">Auditing skill invocations in the context of the user request and runtime state.</p><p class="authors"><span class="me">Guijia Zhang</span>, Shu Yang, Xilin Gong, Di Wang</p><div class="link-row"><a href="https://arxiv.org/abs/2604.10286" target="_blank" rel="noopener noreferrer">Paper ↗</a>
-<a href="https://arxiv.org/pdf/2604.10286" target="_blank" rel="noopener noreferrer">PDF ↗</a>
-<a href="https://github.com/123zgj123/STARS" target="_blank" rel="noopener noreferrer">Code ↗</a></div></div></article><article class="research-item"><figure class="research-figure"><img src="assets/gui.svg" width="420" height="200" alt="Paired interventions test pixels and structure against agent beliefs." loading="lazy"></figure><div><p class="venue">Preprint · 2026</p><h3><a href="https://arxiv.org/abs/2607.04334" target="_blank" rel="noopener noreferrer">Do GUI Agents Believe Their Eyes?</a></h3><p class="research-description">Testing how GUI agents use pixels and structured state when the two disagree.</p><p class="authors"><span class="me">Guijia Zhang</span>, Yuxun Chen, Yuheng Qi, Harry Yang</p><div class="link-row"><a href="https://arxiv.org/abs/2607.04334" target="_blank" rel="noopener noreferrer">Paper ↗</a>
-<a href="https://arxiv.org/pdf/2607.04334" target="_blank" rel="noopener noreferrer">PDF ↗</a></div></div></article></section>
-<section id="software" class="section" aria-labelledby="software-title"><div class="section-heading"><h2 id="software-title">Research software</h2><a href="projects.html">More projects →</a></div><div class="software-grid">
-<article><h3>FarField</h3><p>A local research loop that turns a topic into a falsifiable hypothesis and a reproducible experiment protocol. Model proposals are checked with ordinary Python.</p><div class="link-row"><a href="https://github.com/123zgj123/FarField" target="_blank" rel="noopener noreferrer">Repository ↗</a><a href="projects.html#farfield">Project notes →</a></div></article>
-<article><h3>OpenClaw Security Suite</h3><p>Audit logging, policy-based skill isolation, and alerting for an agent gateway, with a dashboard for inspecting security events.</p><div class="link-row"><a href="projects.html#openclaw">Project notes →</a></div></article></div></section>
-<section id="news" class="section" aria-labelledby="news-title"><div class="section-heading"><h2 id="news-title">Recent notes</h2></div><ul class="news-list"><li><time>Aug 2026</time><span class="body"><strong>ECA</strong> (<i>Hallucination as Exploit</i>) and <strong>STARS</strong> accepted to <strong>EMNLP 2026 Findings</strong>.</span></li><li><time>Aug 2026</time><span class="body">Released <strong>FarField</strong>, a local research loop for falsifiable hypotheses and reproducible protocols. <a href="https://github.com/123zgj123/FarField" target="_blank" rel="noopener">GitHub</a></span></li></ul><details class="news-archive"><summary>Earlier notes</summary><ul class="news-list"><li><time>May 2026</time><span class="body">New preprint on <strong>agent skill regulation as a procedural knowledge representation problem</strong>, joint work with HKUST.</span></li><li><time>May 2026</time><span class="body">Started a first-author project on <strong>evidence-carrying multimodal agents</strong>, formalizing hallucination-to-action conversion.</span></li><li><time>Apr 2026</time><span class="body">Completed <strong>STARS</strong>, an invocation-time risk-auditing framework for LLM agent skills, together with the 3,000-record <strong>SIA-Bench</strong> benchmark.</span></li><li><time>Feb 2026</time><span class="body">Joined the <strong>HKUST Academy of Interdisciplinary Studies</strong> as a remote research intern, advised by Prof. Huamin Qu and Yuzhe Shi.</span></li><li><time>Jan 2026</time><span class="body">Began a research collaboration with <strong>KAUST</strong> (Prof. Di Wang, Shu Yang) on agent runtime safety.</span></li><li><time>Dec 2025</time><span class="body">Joined <strong>HKUST (Guangzhou)</strong> as an exchange student, working with Prof. Lei Chen on agent memory and database systems.</span></li></ul></details></section>
+
+  <main id="main" class="page-shell" tabindex="-1">
+    <section id="about" class="section hero-section">
+      <h1 class="hero-name">Guijia Zhang <span class="zh-name" lang="zh">张桂嘉</span></h1>
+
+      <div class="hero-layout">
+        <div class="hero-prose">
+          <p>I study how AI agents use evidence to form beliefs and choose actions. My work examines failures that can arise between these steps: <a href="#eca">unsupported observations authorizing tool use</a>, stale inference state surviving a rollback, and <a href="#divergence">evaluation metrics that miss changes in behavior</a>.</p>
+          <p>I also develop <a href="#paperfuture">PaperFuture</a> and <a href="#farfield-v2">FarField-v2</a>, research software for working through literature, competing hypotheses, and experiments. More recently, I have been exploring how world models might help plan learning on verifiable code and mathematics tasks.</p>
+
+          <p class="update-note"><a href="#eca">ECA</a> and <a href="#stars">STARS</a> were accepted to <strong>Findings of EMNLP 2026</strong>.</p>
+
+          <div class="inline-contacts" aria-label="Primary links">
+            <a href="mailto:2022040399@email.szu.edu.cn">2022040399@email.szu.edu.cn</a>
+            <span class="sep" aria-hidden="true">·</span>
+            <a href="https://scholar.google.com/citations?user=21U3-xUAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+            <span class="sep" aria-hidden="true">·</span>
+            <a href="https://github.com/123zgj123" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            <span class="sep" aria-hidden="true">·</span>
+            <a href="assets/cv.pdf">CV (PDF) ↗</a>
+          </div>
+        </div>
+
+        <aside class="research-map" aria-label="Interactive research map">
+          <div class="map-field">
+            <svg class="map-svg" viewBox="0 0 420 356" aria-hidden="true" focusable="false">
+              <!-- Reliability curves -->
+              <path class="map-curve" data-topic="reliability" data-work="eca" d="M 138 92 C 178 92, 184 22, 224 22" />
+              <path class="map-curve" data-topic="reliability" data-work="stars" d="M 138 92 C 178 92, 184 52, 224 52" />
+              <path class="map-curve" data-topic="reliability" data-work="rollback" d="M 138 92 C 178 92, 184 82, 224 82" />
+              <path class="map-curve" data-topic="reliability" data-work="gui" d="M 138 92 C 178 92, 184 112, 224 112" />
+              <path class="map-curve" data-topic="reliability" data-work="commitment" d="M 138 92 C 178 92, 184 142, 224 142" />
+              <path class="map-curve" data-topic="reliability" data-work="regulation" d="M 138 92 C 178 92, 184 172, 224 172" />
+              <!-- Evaluation curves -->
+              <path class="map-curve" data-topic="evaluation" data-work="divergence" d="M 138 232 C 178 232, 184 216, 224 216" />
+              <path class="map-curve" data-topic="evaluation" data-work="judge" d="M 138 232 C 178 232, 184 248, 224 248" />
+              <!-- Automated research curves -->
+              <path class="map-curve" data-topic="automated" data-work="paperfuture" d="M 138 312 C 178 312, 184 296, 224 296" />
+              <path class="map-curve" data-topic="automated" data-work="farfield-v2" d="M 138 312 C 178 312, 184 328, 224 328" />
+
+              <!-- Topic anchor dots -->
+              <circle class="map-dot topic-dot" data-topic="reliability" cx="138" cy="92" r="3" />
+              <circle class="map-dot topic-dot" data-topic="evaluation" cx="138" cy="232" r="3" />
+              <circle class="map-dot topic-dot" data-topic="automated" cx="138" cy="312" r="3" />
+
+              <!-- Work anchor dots -->
+              <circle class="map-dot work-dot" data-topic="reliability" data-work="eca" cx="224" cy="22" r="2.25" />
+              <circle class="map-dot work-dot" data-topic="reliability" data-work="stars" cx="224" cy="52" r="2.25" />
+              <circle class="map-dot work-dot" data-topic="reliability" data-work="rollback" cx="224" cy="82" r="2.25" />
+              <circle class="map-dot work-dot" data-topic="reliability" data-work="gui" cx="224" cy="112" r="2.25" />
+              <circle class="map-dot work-dot" data-topic="reliability" data-work="commitment" cx="224" cy="142" r="2.25" />
+              <circle class="map-dot work-dot" data-topic="reliability" data-work="regulation" cx="224" cy="172" r="2.25" />
+              <circle class="map-dot work-dot" data-topic="evaluation" data-work="divergence" cx="224" cy="216" r="2.25" />
+              <circle class="map-dot work-dot" data-topic="evaluation" data-work="judge" cx="224" cy="248" r="2.25" />
+              <circle class="map-dot work-dot" data-topic="automated" data-work="paperfuture" cx="224" cy="296" r="2.25" />
+              <circle class="map-dot work-dot" data-topic="automated" data-work="farfield-v2" cx="224" cy="328" r="2.25" />
+            </svg>
+
+            <div class="map-clusters">
+              <div class="map-cluster" data-topic-group="reliability">
+                <div class="map-topic-cell">
+                  <button type="button" class="map-topic-btn" data-topic-btn="reliability" aria-pressed="false" hidden>
+                    <span class="topic-name">Agent reliability</span>
+                    <span class="topic-meta">6 papers</span>
+                  </button>
+                  <span class="map-topic-static">Agent reliability</span>
+                </div>
+                <ul class="map-works" aria-label="Agent reliability works">
+                  <li><a href="#eca" class="map-work-link" data-work-link="eca" data-topic="reliability">ECA · Evidence gates</a></li>
+                  <li><a href="#stars" class="map-work-link" data-work-link="stars" data-topic="reliability">STARS · Activation risk</a></li>
+                  <li><a href="#rollback" class="map-work-link" data-work-link="rollback" data-topic="reliability">Rollback · Cache provenance</a></li>
+                  <li><a href="#gui" class="map-work-link" data-work-link="gui" data-topic="reliability">GUI Belief · Pixels vs. DOM</a></li>
+                  <li><a href="#commitment" class="map-work-link" data-work-link="commitment" data-topic="reliability">Commitment Window</a></li>
+                  <li><a href="#regulation" class="map-work-link" data-work-link="regulation" data-topic="reliability">Skill Regulation</a></li>
+                </ul>
+              </div>
+
+              <div class="map-cluster" data-topic-group="evaluation">
+                <div class="map-topic-cell">
+                  <button type="button" class="map-topic-btn" data-topic-btn="evaluation" aria-pressed="false" hidden>
+                    <span class="topic-name">Evaluation</span>
+                    <span class="topic-meta">2 papers</span>
+                  </button>
+                  <span class="map-topic-static">Evaluation</span>
+                </div>
+                <ul class="map-works" aria-label="Evaluation works">
+                  <li><a href="#divergence" class="map-work-link" data-work-link="divergence" data-topic="evaluation">Divergence · Decision validity</a></li>
+                  <li><a href="#judge" class="map-work-link" data-work-link="judge" data-topic="evaluation">Judge Replacement · Score reuse</a></li>
+                </ul>
+              </div>
+
+              <div class="map-cluster" data-topic-group="automated">
+                <div class="map-topic-cell">
+                  <button type="button" class="map-topic-btn" data-topic-btn="automated" aria-pressed="false" hidden>
+                    <span class="topic-name">Automated research</span>
+                    <span class="topic-meta">2 systems</span>
+                  </button>
+                  <span class="map-topic-static">Automated research</span>
+                </div>
+                <ul class="map-works" aria-label="Automated research systems">
+                  <li><a href="#paperfuture" class="map-work-link" data-work-link="paperfuture" data-topic="automated">PaperFuture · Ideation</a></li>
+                  <li><a href="#farfield-v2" class="map-work-link" data-work-link="farfield-v2" data-topic="automated">FarField-v2 · Runtime</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="map-status-bar" id="map-status-bar" hidden>
+            <span id="map-status-text" class="map-status-text" role="status" aria-live="polite"></span>
+            <a id="map-jump-link" class="map-jump-link" href="#publications">View related work ↓</a>
+            <button type="button" id="map-clear-btn" class="map-clear-btn">Clear</button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section id="publications" class="section">
+      <div class="section-header">
+        <h2>Publications</h2>
+        <div class="filter-controls" role="group" aria-label="Filter main publications" hidden>
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All (8)</button>
+          <button type="button" class="filter-btn" data-filter="accepted" aria-pressed="false">Accepted (2)</button>
+          <button type="button" class="filter-btn" data-filter="review" aria-pressed="false">Under Review (6)</button>
+        </div>
+      </div>
+      <p id="filter-live-status" class="sr-only" role="status" aria-live="polite"></p>
+
+      <div class="pub-list">
+        <!-- 1. ECA -->
+        <article class="pub-entry" id="eca" data-status="accepted" data-first="true" data-topic="reliability">
+          <h3><a href="https://arxiv.org/abs/2605.19192">Hallucination as Exploit: Evidence-Carrying Multimodal Agents</a></h3>
+          <div class="pub-byline">
+            <p class="pub-authors"><strong>Guijia Zhang</strong>, Hao Zheng, Harry Yang</p>
+            <div class="pub-meta">
+              <span class="status-pill accepted">Findings of EMNLP 2026</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-role">First author</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-topic">Evidence &amp; authorization</span>
+            </div>
+          </div>
+          <p class="pub-summary">A hallucinated observation can become a security failure when an agent treats it as permission to use a tool. ECA decomposes tool calls into action-critical predicates, verifies typed DOM, OCR, and accessibility evidence, and applies a deterministic authorization gate before execution. Across 1,700 tests spanning 17 attack categories, the hardened gate recorded zero canonical bypasses.</p>
+          <div class="pub-actions">
+            <a href="https://arxiv.org/abs/2605.19192">arXiv ↗</a>
+            <a href="https://arxiv.org/pdf/2605.19192">PDF ↗</a>
+            <a href="https://zhuanlan.zhihu.com/p/2082853937955223509">Synced / 机器之心 ↗</a>
+            <details class="bib-disclosure">
+              <summary>BibTeX</summary>
+              <div class="bib-panel">
+                <pre><code>@misc{zhang2026eca,
+  title = {Hallucination as Exploit: Evidence-Carrying Multimodal Agents},
+  author = {Guijia Zhang and Hao Zheng and Harry Yang},
+  year = {2026},
+  eprint = {2605.19192},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2605.19192}
+}</code></pre>
+                <div class="bib-tools">
+                  <button type="button" class="copy-bib-btn" hidden>Copy BibTeX</button>
+                  <a href="assets/citations/eca.bib" download>Download .bib</a>
+                  <span class="copy-feedback" role="status" aria-live="polite"></span>
+                </div>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- 2. STARS -->
+        <article class="pub-entry" id="stars" data-status="accepted" data-first="true" data-topic="reliability">
+          <h3><a href="https://arxiv.org/abs/2604.10286">STARS: Skill Triage via Activation Risk Scoring for LLM Agents</a></h3>
+          <div class="pub-byline">
+            <p class="pub-authors"><strong>Guijia Zhang</strong>, Shu Yang, Xilin Gong, Di Wang</p>
+            <div class="pub-meta">
+              <span class="status-pill accepted">Findings of EMNLP 2026</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-role">First author</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-topic">Invocation-time risk</span>
+            </div>
+          </div>
+          <p class="pub-summary">The risk of invoking a skill depends on the current request, so a tool-level assessment alone is not enough. STARS combines a static capability prior, a request-conditioned risk scorer, and calibrated fusion to allocate a limited review budget across skill activations. On the 3,000-record SIA-Bench, held-out high-risk AUPRC improves by 12% over the strongest proxy baseline.</p>
+          <div class="pub-actions">
+            <a href="https://arxiv.org/abs/2604.10286">arXiv ↗</a>
+            <a href="https://arxiv.org/pdf/2604.10286">PDF ↗</a>
+            <a href="https://github.com/123zgj123/STARS">Code ↗</a>
+            <details class="bib-disclosure">
+              <summary>BibTeX</summary>
+              <div class="bib-panel">
+                <pre><code>@misc{zhang2026stars,
+  title = {{STARS}: Skill Triage via Activation Risk Scoring for LLM Agents},
+  author = {Guijia Zhang and Shu Yang and Xilin Gong and Di Wang},
+  year = {2026},
+  eprint = {2604.10286},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2604.10286}
+}</code></pre>
+                <div class="bib-tools">
+                  <button type="button" class="copy-bib-btn" hidden>Copy BibTeX</button>
+                  <a href="assets/citations/stars.bib" download>Download .bib</a>
+                  <span class="copy-feedback" role="status" aria-live="polite"></span>
+                </div>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- 3. Divergence -->
+        <article class="pub-entry" id="divergence" data-status="review" data-first="true" data-topic="evaluation">
+          <h3>When Token-Level Divergence Misranks Prompt-Injection Robustness</h3>
+          <div class="pub-byline">
+            <div class="pub-meta">
+              <span class="status-pill review">Under Review</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-role">First author</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-topic">Evaluation validity</span>
+            </div>
+          </div>
+          <p class="pub-summary">Token-level divergence need not track whether a prompt injection changes an agent’s action. Controlled experiments in masked diffusion language models expose a counterexample where lower clean-to-injected KL divergence accompanies more successful attacks. The analysis separates numerical sensitivity from decision relevance and establishes margin conditions under which stability on relevant tokens preserves an authorized action.</p>
+        </article>
+
+        <!-- 4. Rollback -->
+        <article class="pub-entry" id="rollback" data-status="review" data-first="true" data-topic="reliability">
+          <h3>Rollback as Authority Revocation: Binding Caches to Committed History</h3>
+          <div class="pub-byline">
+            <div class="pub-meta">
+              <span class="status-pill review">Under Review</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-role">First author</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-topic">State provenance</span>
+            </div>
+          </div>
+          <p class="pub-summary">Removing a branch from a conversation does not necessarily revoke its influence if later decisions reuse that branch’s KV-cache state. This work defines a provenance contract binding KV-cache reuse to committed history and shows that retained prefixes change authorization outcomes in 43 of 63 tested settings across seven model families. In these tests, a reference adapter restores authorized actions in all 36 edited histories and preserves them in 18 no-op controls.</p>
+        </article>
+
+        <!-- 5. Judge -->
+        <article class="pub-entry" id="judge" data-status="review" data-first="true" data-topic="evaluation">
+          <h3>When Can Historical Scores Be Reused After Judge Replacement?</h3>
+          <div class="pub-byline">
+            <div class="pub-meta">
+              <span class="status-pill review">Under Review</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-role">First author</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-topic">Judge replacement</span>
+            </div>
+          </div>
+          <p class="pub-summary">When an LLM judge is replaced, historical scores do not automatically support the same downstream decisions. This study separates decision compatibility, finite-population certification, and economic usefulness to derive an audit-budget frontier. Across 18 previously recorded gateway comparisons, certified reuse saves under 3% of incoming calls at 10% tolerance and the original audit budget, while failed audits can increase rescoring costs.</p>
+        </article>
+
+        <!-- 6. GUI -->
+        <article class="pub-entry" id="gui" data-status="review" data-first="true" data-topic="reliability">
+          <h3><a href="https://arxiv.org/abs/2607.04334">Do GUI Agents Believe Their Eyes? Diagnosing State-Belief Reliance on Pixels versus Structure</a></h3>
+          <div class="pub-byline">
+            <p class="pub-authors"><strong>Guijia Zhang</strong>, Yuxun Chen, Yuheng Qi, Harry Yang</p>
+            <div class="pub-meta">
+              <span class="status-pill review">Under Review</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-role">First author</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-topic">Perception &amp; belief</span>
+            </div>
+          </div>
+          <p class="pub-summary">GUI agents observe both screenshots and structured accessibility or DOM trees, creating ambiguity when the two channels conflict. Paired single-channel interventions across 735 web, mobile, and desktop probes disentangle visual perception from downstream state belief. Across seven evaluated models, agents frequently defer to structured text even when they accurately perceive the contradicting pixels, yielding a Perception-Fusion Gap of 0.30 to 0.75.</p>
+          <div class="pub-actions">
+            <a href="https://arxiv.org/abs/2607.04334">arXiv ↗</a>
+            <a href="https://arxiv.org/pdf/2607.04334">PDF ↗</a>
+            <details class="bib-disclosure">
+              <summary>BibTeX</summary>
+              <div class="bib-panel">
+                <pre><code>@misc{zhang2026gui,
+  title = {Do {GUI} Agents Believe Their Eyes? Diagnosing State-Belief Reliance on Pixels versus Structure},
+  author = {Guijia Zhang and Yuxun Chen and Yuheng Qi and Harry Yang},
+  year = {2026},
+  eprint = {2607.04334},
+  archivePrefix = {arXiv},
+  url = {https://arxiv.org/abs/2607.04334}
+}</code></pre>
+                <div class="bib-tools">
+                  <button type="button" class="copy-bib-btn" hidden>Copy BibTeX</button>
+                  <a href="assets/citations/gui.bib" download>Download .bib</a>
+                  <span class="copy-feedback" role="status" aria-live="polite"></span>
+                </div>
+              </div>
+            </details>
+          </div>
+        </article>
+
+        <!-- 7. Commitment Window -->
+        <article class="pub-entry" id="commitment" data-status="review" data-first="false" data-topic="reliability">
+          <h3>The Commitment Window: An Operator-Relative Late Override Span under Conflicting Evidence</h3>
+          <div class="pub-byline">
+            <div class="pub-meta">
+              <span class="status-pill review">Under Review</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-role">Second author</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-topic">Causal interventions</span>
+            </div>
+          </div>
+          <p class="pub-summary">This study asks when a model’s preference between conflicting evidence chains becomes resistant to a specified causal intervention. Layer-wise donor patching across nine models identifies a narrow late-layer commitment window defined relative to the intervention operator. An effective intervention layer is found in 83% of gated conflict pairs, compared with 1.7% at neutral control positions.</p>
+        </article>
+
+        <!-- 8. Regulation -->
+        <article class="pub-entry" id="regulation" data-status="review" data-first="true" data-topic="reliability">
+          <h3>Agent Skill Regulation as a Procedural Knowledge Representation Problem</h3>
+          <div class="pub-byline">
+            <div class="pub-meta">
+              <span class="status-pill review">Under Review</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-role">Co-first author (2nd listed)</span>
+              <span class="meta-sep" aria-hidden="true">·</span>
+              <span class="meta-topic">Procedural knowledge</span>
+            </div>
+          </div>
+          <p class="pub-summary">Human-written skills describe workflows in prose, leaving execution constraints implicit during agent runs. A syntax–semantics–execution representation aligns operation and object flows and combines formal priors with procedural evidence through bidirectional optimization. Runtime regulation improves task success by 4.3 percentage points and reduces erroneous submissions by 37.2 percentage points.</p>
+        </article>
+      </div>
+
+      <!-- Earlier Work Disclosure -->
+      <details class="earlier-work-disclosure">
+        <summary>Earlier publications &amp; collaborations (4)</summary>
+        <div class="earlier-list">
+          <article class="earlier-item" id="spatial">
+            <span class="earlier-year">2026</span>
+            <div>
+              <h4>Spatial Causal Prediction in Video</h4>
+              <p><strong>Guijia Zhang</strong> (main contributor)</p>
+            </div>
+          </article>
+          <article class="earlier-item" id="tampering">
+            <span class="earlier-year">2025</span>
+            <div>
+              <h4>Document Image Tampering Localization Based on Foundation Models</h4>
+              <p><strong>Guijia Zhang</strong> (third author) · <em>International Conference on Document Analysis and Recognition (ICDAR), 2025</em></p>
+            </div>
+          </article>
+          <article class="earlier-item" id="echorag">
+            <span class="earlier-year">2025</span>
+            <div>
+              <h4>EchoRAG: Real-Time Retrieval Augmented Generation with Episodic Memory</h4>
+              <p><strong>Guijia Zhang</strong> (main contributor) · <em>Preprint</em></p>
+            </div>
+          </article>
+          <article class="earlier-item" id="diffusion">
+            <span class="earlier-year">2024</span>
+            <div>
+              <h4>A Diffusion-Based Approach for Restoring Face-Swapped Images</h4>
+              <p><strong>Guijia Zhang</strong> (third author) · <em>APSIPA Annual Summit and Conference (APSIPA ASC), 2024</em></p>
+            </div>
+          </article>
+        </div>
+      </details>
+    </section>
+
+    <!-- RESEARCH SOFTWARE & PROJECTS -->
+    <section id="projects" class="section">
+      <div class="section-header">
+        <h2>Research software</h2>
+      </div>
+
+      <p class="section-intro">I build tools that keep research proposals separate from experimental results. PaperFuture helps develop testable ideas from the literature; FarField-v2 tracks experiments, competing explanations, and the evidence behind each conclusion.</p>
+
+      <div class="primary-systems-grid">
+        <article class="system-card" id="paperfuture" data-topic="automated">
+          <div class="system-card-top">
+            <div class="system-title-row">
+              <h3>PaperFuture</h3>
+              <a href="https://github.com/123zgj123/paperfuture" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+            <p class="system-subtitle">Literature-grounded research ideation and branch-isolated synthesis</p>
+          </div>
+          <p>PaperFuture connects papers, proposed mechanisms, and experiment plans while keeping alternative hypotheses separate. Its versioned corpora cover four research areas, with 25,059 deduplicated paper versions and 568 full-text papers.</p>
+          <ul class="mechanism-list">
+            <li><strong>Branch-isolated memory:</strong> Retains competing explanations and reviewer disagreements across multi-model conditional simulations instead of collapsing prematurely to a consensus idea.</li>
+            <li><strong>Reproducible corpus snapshots:</strong> Enforces frozen literature snapshots, token budget accounting, resumable state, and deterministic offline replay.</li>
+          </ul>
+        </article>
+
+        <article class="system-card" id="farfield-v2" data-topic="automated">
+          <div class="system-card-top">
+            <div class="system-title-row">
+              <h3>FarField-v2</h3>
+              <a href="https://github.com/123zgj123/FarField-v2" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
+            </div>
+            <p class="system-subtitle">Evidence-gated automated research runtime</p>
+          </div>
+          <p>FarField-v2 coordinates hypotheses, experiments, competing explanations, and review. It records which experiment supports each claim and checks provenance and reproduction before treating a generated proposal as a result.</p>
+          <ul class="mechanism-list">
+            <li><strong>Preregistered two-arm probes:</strong> Binds proposed claims to concrete scientific objects and baseline comparisons before execution begins.</li>
+            <li><strong>Reproduction gates:</strong> Separates model-generated proposals from measured empirical outcomes, auditing failures through offline regression suites and bounded live runs.</li>
+          </ul>
+        </article>
+      </div>
+
+      <aside class="exploration-note" aria-labelledby="exploration-heading">
+        <h3 id="exploration-heading">World models &amp; capability development</h3>
+        <p>I am exploring whether models of capability development could help plan training for verifiable code and mathematics tasks. The idea is to represent current abilities as a state and a curriculum as an action, then study how learning depends on data coverage and reliable feedback. This remains an exploratory direction.</p>
+      </aside>
+
+      <h3 class="subsection-heading">Earlier Systems &amp; Engineering</h3>
+      <div class="engineering-list">
+        <article class="eng-item" id="farfield">
+          <div class="eng-head">
+            <h4>FarField <span class="eng-tech">Python 3.11 · Standard Library</span></h4>
+            <a href="https://github.com/123zgj123/FarField" target="_blank" rel="noopener noreferrer">Repository ↗</a>
+          </div>
+          <p>Local reproducible research loop that translates a broad research question into a falsifiable hypothesis and a registered two-arm experiment protocol. While the language model proposes candidate claims and scripts, all graph validation, prior-art checks, dataset binding, and experimental arithmetic execute in deterministic Python.</p>
+        </article>
+
+        <article class="eng-item" id="openclaw">
+          <div class="eng-head">
+            <h4>OpenClaw Security Suite <span class="eng-tech">TypeScript · Node.js · Vitest</span></h4>
+          </div>
+          <p>Security and auditing infrastructure for a tool-using agent gateway. Implements a persistent audit-event store with signed integrity verification, rule-based alerting across webhook/Slack/Discord/Telegram channels, a configurable skill execution sandbox, and a management interface backed by eleven permission-scoped RPC methods.</p>
+        </article>
+
+        <article class="eng-item" id="intelliselect">
+          <div class="eng-head">
+            <h4>IntelliSelect <span class="eng-tech">FastAPI · React 19 · vLLM · Docker</span></h4>
+          </div>
+          <p>Auditable decision-support application built for faculty recruitment pre-screening at HKUST (Guangzhou). Combines deterministic matching rules, Google Scholar peer-group benchmarking, and five-dimension rubric scoring via a self-hosted Qwen3-14B model while keeping final evaluation authority with human committees.</p>
+        </article>
+
+        <article class="eng-item" id="legal-pilot">
+          <div class="eng-head">
+            <h4>Legal Pilot 2.0 <span class="eng-tech">Qwen3-235B · FastAPI</span></h4>
+          </div>
+          <p>Two-stage contract review workflow designed to locate legal risks without leaking confidential entities. Pairs a red-line compliance scan and rule-by-rule auditing with local sensitive-entity detection, deterministic pre-masking, and length-preserving token replacement.</p>
+        </article>
+
+        <article class="eng-item" id="memory">
+          <div class="eng-head">
+            <h4>Agentic RAG &amp; Memory Systems <span class="eng-tech">PyTorch · Hugging Face · Faiss · Milvus</span></h4>
+          </div>
+          <p>Evaluation and supervision pipelines for agents operating over long contexts. Constructed a cross-topic retrieval benchmark to diagnose recall failures and context drift, and built a trajectory-conversion pipeline transforming multi-turn browser-agent logs into task-level supervised fine-tuning data.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- EXPERIENCE -->
+    <section id="experience" class="section">
+      <div class="section-header">
+        <h2>Experience</h2>
+      </div>
+
+      <div class="timeline-list">
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-date">Jan 2026 – Present</span>
+            <span class="timeline-loc">Remote Collaboration</span>
+          </div>
+          <div class="timeline-content">
+            <h3>King Abdullah University of Science and Technology (KAUST)</h3>
+            <p class="timeline-role">Remote Research Collaboration · Collaborators: Prof. Di Wang, Shu Yang</p>
+            <ul>
+              <li>Led the <a href="#stars">STARS</a> project: formulated request-conditioned skill invocation triage, constructed the 3,000-record SIA-Bench dataset, designed the calibrated risk-scoring framework, and wrote the manuscript; continuing collaboration on agent runtime safety.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-date">Feb 2026 – May 2026</span>
+            <span class="timeline-loc">Remote Intern</span>
+          </div>
+          <div class="timeline-content">
+            <h3>The Hong Kong University of Science and Technology (HKUST)</h3>
+            <p class="timeline-role">Remote Research Intern, Academy of Interdisciplinary Studies · Advisors: Prof. Huamin Qu, Yuzhe Shi</p>
+            <ul>
+              <li>Conducted co-first-author research on <a href="#regulation">agent skill regulation</a> as a procedural knowledge representation problem, modeling execution commitments, gate conditions, and recovery actions in human-written skills.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-date">Dec 2025 – Jun 2026</span>
+            <span class="timeline-loc">Guangzhou, China</span>
+          </div>
+          <div class="timeline-content">
+            <h3>HKUST (Guangzhou)</h3>
+            <p class="timeline-role">Exchange Student · Advisor: Prof. Lei Chen · Agent memory and database systems</p>
+            <ul>
+              <li>Analyzed MemOS, MIRIX, AgentFold, Recursive Language Models, and ReasoningBank to identify bottlenecks in long-context memory retrieval, state updates, and long-horizon dependency modeling.</li>
+              <li>Constructed SFT datasets with BrowserAgent by converting multi-turn trajectories from turn-level to task-level supervision; evaluated trade-offs among memory write policies, state compression, and retrieval latency.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-date">Oct 2025 – Nov 2025</span>
+            <span class="timeline-loc">Intern</span>
+          </div>
+          <div class="timeline-content">
+            <h3>DeepWisdom (MetaGPT)</h3>
+            <p class="timeline-role">Algorithm Evaluation Engineer Intern</p>
+            <ul>
+              <li>Contributed to multi-agent code-generation benchmarks and MGX product evaluation, designing process-level evaluation workflows and conducting failure-mode analysis on production agents.</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-date">Dec 2024 – Aug 2025</span>
+            <span class="timeline-loc">Remote Assistant</span>
+          </div>
+          <div class="timeline-content">
+            <h3>Tsinghua University, HCI Lab</h3>
+            <p class="timeline-role">Remote Research Assistant · Advisors: Prof. Chun Yu, Prof. Yuanchun Shi</p>
+            <ul>
+              <li>Contributed to SynergyAdvisor, modeling expert–avatar co-evolution as a human–AI alignment problem with memory-aware decision making and expert-feedback-enhanced chain-of-thought optimization.</li>
+              <li>Developed a long-context, cross-topic agentic RAG benchmark and retrieval-enhancement pipeline to diagnose information-recall failures and context drift in complex dialogue.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- EDUCATION & HONORS -->
+    <div class="dual-section-grid">
+      <section id="education" class="section">
+        <div class="section-header">
+          <h2>Education</h2>
+        </div>
+        <article class="edu-entry">
+          <div class="edu-header">
+            <h3>Shenzhen University</h3>
+            <span class="mono-date">Sep 2022 – Jun 2026</span>
+          </div>
+          <p class="edu-degree"><strong>B.Eng. in Electronic Information Engineering</strong> (Elite Innovation Program)</p>
+          <p class="edu-detail"><strong>University Honors:</strong> Academician Scholarship; Star of Culture and Sports Award.</p>
+          <p class="edu-detail"><strong>Core Coursework:</strong> Machine Learning, Artificial Intelligence, Computer Networks, Data Structures, Mathematical Analysis, Advanced Algebra, Stochastic Processes.</p>
+        </article>
+      </section>
+
+      <section id="awards" class="section">
+        <div class="section-header">
+          <h2>Honors &amp; training</h2>
+        </div>
+        <ul class="awards-list">
+          <li>
+            <strong>National Second Prize</strong>, Huashu Cup Mathematical Contest in Modeling <span>(Team Leader)</span>
+          </li>
+          <li>
+            <strong>Provincial Third Prize (Guangdong)</strong>, National Undergraduate Mathematical Contest in Modeling <span>(Team Leader)</span>
+          </li>
+          <li>
+            <strong>Provincial Third Prize (Guangdong)</strong>, China Collegiate Computing Contest — Network Technology Challenge <span>(Graduate Track, Core Member)</span>
+          </li>
+          <li>
+            <strong>Academician Scholarship</strong> &amp; Star of Culture and Sports Award, Shenzhen University
+          </li>
+        </ul>
+
+        <div class="training-note">
+          <h3>Formal Mathematics Training</h3>
+          <p>Completed the <strong>AI4MATH</strong> formal mathematics course organized by Prof. Zaiwen Wen at Peking University, with training in the Lean theorem prover and mathematical formalization.</p>
+        </div>
+      </section>
+    </div>
+
+    <!-- CONTACT / FOOTER -->
+    <footer id="contact" class="section footer-section">
+      <div class="footer-grid">
+        <div>
+          <h2 class="footer-title">Guijia Zhang <span lang="zh">张桂嘉</span></h2>
+          <p class="footer-sub">Trustworthy agents · LLM evaluation · Automated research</p>
+        </div>
+        <div class="footer-links">
+          <a href="mailto:2022040399@email.szu.edu.cn">2022040399@email.szu.edu.cn</a>
+          <a href="https://scholar.google.com/citations?user=21U3-xUAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
+          <a href="https://github.com/123zgj123" target="_blank" rel="noopener noreferrer">GitHub (@123zgj123) ↗</a>
+          <a href="assets/cv.pdf">Curriculum Vitae (PDF) ↗</a>
+        </div>
+      </div>
+    </footer>
   </main>
-  <footer class="site-footer wrap">
-    <div class="footer-top"><p>Let’s talk research.</p><div class="link-row"><a href="mailto:2022040399@email.szu.edu.cn">Email</a>
-<a href="https://scholar.google.com/citations?user=21U3-xUAAAAJ&amp;hl=en&amp;oi=ao" target="_blank" rel="noopener noreferrer">Google Scholar</a>
-<a href="https://github.com/123zgj123" target="_blank" rel="noopener noreferrer">GitHub</a>
-<a href="assets/cv.pdf" target="_blank" rel="noopener noreferrer">CV <span class="sr-only">(PDF)</span></a></div></div>
-    <div class="footer-bottom"><span>© 2026 Guijia Zhang</span><span>Last updated September 2026</span></div>
-  </footer>
 </body>
 </html>
