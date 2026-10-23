@@ -85,8 +85,32 @@ body {
   z-index: 0;
   contain: layout paint style;
   background:
-    radial-gradient(ellipse at 10% 8%, rgba(49, 133, 166, 0.10), transparent 56%),
-    radial-gradient(ellipse at 92% 78%, rgba(108, 88, 190, 0.09), transparent 58%);
+    radial-gradient(ellipse at 12% 10%, rgba(74, 204, 224, 0.13), transparent 54%),
+    radial-gradient(ellipse at 88% 82%, rgba(120, 108, 226, 0.12), transparent 56%);
+}
+
+.observatory-backdrop::before {
+  content: "";
+  position: absolute;
+  inset: 1rem;
+  border: 1px solid rgba(112, 212, 222, 0.11);
+  border-radius: 14px;
+  box-shadow:
+    inset 0 0 48px rgba(112, 212, 222, 0.045),
+    0 0 0 1px rgba(126, 140, 220, 0.05);
+  pointer-events: none;
+}
+
+.observatory-backdrop::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(560px circle at 50% 0%, rgba(112, 212, 222, 0.10), transparent 68%),
+    radial-gradient(560px circle at 50% 100%, rgba(126, 140, 220, 0.09), transparent 68%);
+  opacity: 0.75;
+  pointer-events: none;
+  will-change: opacity, transform;
 }
 
 /* Subtle horizontal spectral horizon haze */
@@ -178,8 +202,20 @@ body {
 .sd-elevated-orbit {
   fill: none;
   stroke: url(#sd-orbit-light);
-  stroke-width: 1.2;
+  stroke-width: 1.45;
   vector-effect: non-scaling-stroke;
+}
+
+.sd-orbit-beam {
+  fill: none;
+  stroke: #94A3F8;
+  stroke-width: 2.25;
+  stroke-linecap: round;
+  stroke-dasharray: 160 840;
+  stroke-dashoffset: 0;
+  opacity: 0.78;
+  vector-effect: non-scaling-stroke;
+  filter: drop-shadow(0 0 6px rgba(148, 163, 248, 0.65));
 }
 
 .sd-gnomon-spine,
@@ -194,16 +230,28 @@ body {
 .sd-rim-lower {
   fill: none;
   stroke: var(--accent-violet);
-  stroke-width: 1.2;
-  opacity: 0.16;
+  stroke-width: 1.35;
+  opacity: 0.26;
 }
 
 .sd-rim-upper {
   vector-effect: non-scaling-stroke;
   fill: none;
   stroke: var(--accent-cyan);
-  stroke-width: 1.35;
-  opacity: 0.34;
+  stroke-width: 1.5;
+  opacity: 0.46;
+}
+
+.sd-rim-beam {
+  vector-effect: non-scaling-stroke;
+  fill: none;
+  stroke: #9BEFF7;
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-dasharray: 180 820;
+  stroke-dashoffset: 0;
+  opacity: 0.84;
+  filter: drop-shadow(0 0 8px rgba(112, 212, 222, 0.75));
 }
 
 .sd-meridian-ring {
@@ -392,20 +440,55 @@ body {
   }
 }
 
+@keyframes viewport-edge-breathe {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
 @keyframes rim-beam-spin {
   to {
     --rim-angle: 360deg;
   }
 }
 
+@keyframes sd-beam-travel {
+  from {
+    stroke-dashoffset: 1000;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@keyframes sd-orbit-travel {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 1000;
+  }
+}
+
 @keyframes panel-breathe {
   0%, 100% {
-    border-color: rgba(168, 185, 204, 0.12);
-    box-shadow: inset 0 1px 0 0 rgba(238, 244, 250, 0.05), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
+    border-color: rgba(112, 212, 222, 0.18);
+    box-shadow:
+      inset 0 1px 0 0 rgba(238, 244, 250, 0.08),
+      inset 0 0 18px rgba(112, 212, 222, 0.03),
+      0 12px 32px -14px rgba(0, 0, 0, 0.58),
+      0 0 14px -4px rgba(112, 212, 222, 0.10);
   }
   50% {
-    border-color: rgba(112, 212, 222, 0.24);
-    box-shadow: inset 0 1px 0 0 rgba(112, 212, 222, 0.14), 0 14px 36px -14px rgba(112, 212, 222, 0.07);
+    border-color: rgba(112, 212, 222, 0.44);
+    box-shadow:
+      inset 0 1px 0 0 rgba(112, 212, 222, 0.28),
+      inset 0 0 26px rgba(112, 212, 222, 0.09),
+      0 16px 40px -12px rgba(6, 12, 22, 0.68),
+      0 0 26px -2px rgba(112, 212, 222, 0.28);
   }
 }
 
@@ -453,7 +536,19 @@ html[data-motion-ready="true"] .sundial-3d-assembly {
 }
 
 html[data-motion-ready="true"] .observatory-horizon {
-  animation: horizon-pulse 15s ease-in-out infinite;
+  animation: horizon-pulse 10s ease-in-out infinite;
+}
+
+html[data-motion-ready="true"] .observatory-backdrop::after {
+  animation: viewport-edge-breathe 10s ease-in-out infinite;
+}
+
+html[data-motion-ready="true"] .sd-rim-beam {
+  animation: sd-beam-travel 9s linear infinite;
+}
+
+html[data-motion-ready="true"] .sd-orbit-beam {
+  animation: sd-orbit-travel 11s linear infinite;
 }
 
 /* ==========================================================================
@@ -463,11 +558,15 @@ html[data-motion="paused"] .observatory-aurora-carrier,
 html[data-motion="paused"] .sd-primary-carrier,
 html[data-motion="paused"] .sd-shadow-carrier,
 html[data-motion="paused"] .sd-orbital-carrier,
+html[data-motion="paused"] .sd-rim-beam,
+html[data-motion="paused"] .sd-orbit-beam,
 html[data-motion="paused"] .observatory-aurora-lobe,
 html[data-motion="paused"] .sundial-3d-assembly,
 html[data-motion="paused"] .observatory-horizon,
+html[data-motion="paused"] .observatory-backdrop::after,
 html[data-motion="paused"] .research-map,
 html[data-motion="paused"] .research-map::after,
+html[data-motion="paused"] .update-note,
 html[data-motion="paused"] .update-note::before,
 html[data-motion="paused"] .update-note::after,
 html[data-motion="paused"] .system-card,
@@ -478,11 +577,15 @@ html[data-motion="reduced"] .observatory-aurora-carrier,
 html[data-motion="reduced"] .sd-primary-carrier,
 html[data-motion="reduced"] .sd-shadow-carrier,
 html[data-motion="reduced"] .sd-orbital-carrier,
+html[data-motion="reduced"] .sd-rim-beam,
+html[data-motion="reduced"] .sd-orbit-beam,
 html[data-motion="reduced"] .observatory-aurora-lobe,
 html[data-motion="reduced"] .sundial-3d-assembly,
 html[data-motion="reduced"] .observatory-horizon,
+html[data-motion="reduced"] .observatory-backdrop::after,
 html[data-motion="reduced"] .research-map,
 html[data-motion="reduced"] .research-map::after,
+html[data-motion="reduced"] .update-note,
 html[data-motion="reduced"] .update-note::before,
 html[data-motion="reduced"] .update-note::after,
 html[data-motion="reduced"] .system-card,
@@ -493,11 +596,15 @@ html.page-hidden .observatory-aurora-carrier,
 html.page-hidden .sd-primary-carrier,
 html.page-hidden .sd-shadow-carrier,
 html.page-hidden .sd-orbital-carrier,
+html.page-hidden .sd-rim-beam,
+html.page-hidden .sd-orbit-beam,
 html.page-hidden .observatory-aurora-lobe,
 html.page-hidden .sundial-3d-assembly,
 html.page-hidden .observatory-horizon,
+html.page-hidden .observatory-backdrop::after,
 html.page-hidden .research-map,
 html.page-hidden .research-map::after,
+html.page-hidden .update-note,
 html.page-hidden .update-note::before,
 html.page-hidden .update-note::after,
 html.page-hidden .system-card,
@@ -737,9 +844,10 @@ a:focus-visible .ext-arrow {
   position: absolute;
   top: -1px;
   left: 0;
-  width: min(280px, 45%);
-  height: 1px;
-  background: linear-gradient(90deg, rgba(112, 212, 222, 0.42), rgba(197, 173, 131, 0.22), transparent);
+  width: min(360px, 55%);
+  height: 1.5px;
+  background: linear-gradient(90deg, var(--accent-cyan), rgba(148, 163, 248, 0.55), rgba(197, 173, 131, 0.28), transparent);
+  box-shadow: 0 0 12px rgba(112, 212, 222, 0.35);
   pointer-events: none;
 }
 
@@ -764,8 +872,8 @@ h1, h2, h3, h4 {
 .hero-name {
   font-size: clamp(2.75rem, 5vw, 4.25rem);
   font-weight: 450;
-  line-height: 1.08;
-  margin: 0 0 1.85rem;
+  line-height: 1.04;
+  margin: 0 0 1.25rem;
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
@@ -780,16 +888,21 @@ h1, h2, h3, h4 {
   letter-spacing: 0.05em;
 }
 
-/* Hero Layout */
+/* Hero Layout: Name-Box Top & Contacts Bottom Locked to Research Map */
 .hero-layout {
   display: grid;
-  grid-template-columns: minmax(0, 1.15fr) minmax(340px, 0.95fr);
+  grid-template-columns: minmax(0, 1.15fr) minmax(350px, 0.95fr);
   gap: 3rem;
-  align-items: start;
+  align-items: stretch;
+}
+
+.hero-prose {
+  display: flex;
+  flex-direction: column;
 }
 
 .hero-prose p {
-  margin: 0 0 1.15rem;
+  margin: 0 0 1.1rem;
   max-width: 64ch;
   color: var(--ink-primary);
 }
@@ -799,16 +912,16 @@ h1, h2, h3, h4 {
    ========================================================================== */
 .update-note {
   position: relative;
-  margin: 1.4rem 0 0;
-  padding: 0.65rem 1rem 0.65rem 2.1rem;
-  background: linear-gradient(135deg, rgba(14, 22, 34, 0.56), rgba(18, 29, 44, 0.38));
-  border: 1px solid rgba(112, 212, 222, 0.2);
+  margin: 0.35rem 0 0;
+  padding: 0.65rem 1.05rem 0.65rem 2.15rem;
+  background: linear-gradient(135deg, rgba(14, 24, 38, 0.68), rgba(18, 30, 48, 0.48));
+  border: 1px solid rgba(112, 212, 222, 0.28);
   border-radius: 8px;
   color: var(--ink-secondary);
   font-size: 1.01rem;
-  overflow: hidden;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
+  box-shadow: inset 0 1px 0 0 rgba(112, 212, 222, 0.16), 0 8px 24px -12px rgba(0, 0, 0, 0.55);
 }
 
 .update-note::before {
@@ -821,7 +934,7 @@ h1, h2, h3, h4 {
   margin-top: -3.5px;
   border-radius: 50%;
   background-color: var(--accent-cyan);
-  box-shadow: 0 0 8px rgba(112, 212, 222, 0.65);
+  box-shadow: 0 0 10px rgba(112, 212, 222, 0.85);
   pointer-events: none;
 }
 
@@ -834,59 +947,75 @@ html[data-motion-ready="true"] .update-note::before {
   font-weight: 600;
 }
 
-/* Single-Rim Masked Travelling Highlight for Glass Panels */
-.research-map::after,
-.update-note::after,
-.system-card::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: inherit;
-  padding: 1px;
-  background: conic-gradient(
-    from var(--rim-angle),
-    transparent 0%,
-    transparent 74%,
-    rgba(112, 212, 222, 0.5) 85%,
-    rgba(197, 173, 131, 0.48) 93%,
-    rgba(126, 140, 220, 0.35) 97%,
-    transparent 100%
-  );
-  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  -webkit-mask-composite: xor;
-  mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
-  mask-composite: exclude;
-  pointer-events: none;
-  opacity: 0.85;
+/* Static Fallback & @supports Masked Dual-Beam Travelling Rim for Glass Panels */
+.research-map,
+.update-note,
+.system-card {
+  border-color: rgba(112, 212, 222, 0.26);
+}
+
+@supports ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  .research-map::after,
+  .update-note::after,
+  .system-card::after {
+    content: "";
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    padding: 1.85px;
+    background: conic-gradient(
+      from var(--rim-angle, 0deg),
+      transparent 0%,
+      rgba(112, 212, 222, 0.14) 9%,
+      rgba(112, 212, 222, 0.94) 19%,
+      rgba(209, 229, 253, 0.98) 22.5%,
+      rgba(148, 163, 248, 0.78) 28%,
+      transparent 37%,
+      transparent 57%,
+      rgba(148, 163, 248, 0.54) 67%,
+      rgba(197, 173, 131, 0.85) 74%,
+      rgba(112, 212, 222, 0.72) 81%,
+      transparent 90%,
+      transparent 100%
+    );
+    -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    -webkit-mask-composite: xor;
+    mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+    mask-composite: exclude;
+    pointer-events: none;
+    opacity: 0.95;
+  }
 }
 
 html[data-motion-ready="true"] .research-map::after {
-  animation: rim-beam-spin 16s linear infinite;
+  animation: rim-beam-spin 9.5s linear infinite;
 }
 
 html[data-motion-ready="true"] .update-note::after {
-  animation: rim-beam-spin 13s linear infinite;
+  animation: rim-beam-spin 8s linear infinite;
 }
 
 html[data-motion-ready="true"] .system-card::after {
-  animation: rim-beam-spin 18s linear infinite;
+  animation: rim-beam-spin 10.5s linear infinite;
 }
 
 html[data-motion-ready="true"] #farfield-v2.system-card::after {
-  animation-delay: -9s;
+  animation-delay: -5.25s;
 }
 
 html[data-motion-ready="true"] .research-map,
+html[data-motion-ready="true"] .update-note,
 html[data-motion-ready="true"] .system-card {
-  animation: panel-breathe 9s ease-in-out infinite;
+  animation: panel-breathe 7.2s ease-in-out infinite;
 }
 
 html[data-motion-ready="true"] #farfield-v2.system-card {
-  animation-delay: -4.5s;
+  animation-delay: -3.6s;
 }
 
 .inline-contacts {
-  margin-top: 1.5rem;
+  margin-top: auto;
+  padding-top: 1.35rem;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
@@ -910,14 +1039,18 @@ html[data-motion-ready="true"] #farfield-v2.system-card {
 .research-map {
   position: relative;
   min-width: 0;
-  padding: 1.15rem 1.25rem 0.95rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  padding: 1.05rem 1.25rem 0.85rem;
   background:
-    radial-gradient(380px circle at 85% 15%, rgba(112, 212, 222, 0.055), transparent 70%),
+    radial-gradient(400px circle at 85% 15%, rgba(112, 212, 222, 0.085), transparent 70%),
+    radial-gradient(320px circle at 15% 88%, rgba(126, 140, 220, 0.075), transparent 70%),
     var(--glass-surface);
-  border: 1px solid var(--glass-border);
+  border: 1px solid rgba(112, 212, 222, 0.24);
   border-top-color: var(--glass-cyan-edge);
   border-radius: 8px;
-  box-shadow: inset 0 1px 0 0 rgba(238, 244, 250, 0.06), 0 12px 32px -16px rgba(0, 0, 0, 0.5);
+  box-shadow: inset 0 1px 0 0 rgba(238, 244, 250, 0.08), 0 12px 32px -16px rgba(0, 0, 0, 0.55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
 }
@@ -931,6 +1064,7 @@ html[data-motion-ready="true"] #farfield-v2.system-card {
 
 .map-field {
   position: relative;
+  flex: 0 0 auto;
 }
 
 .map-svg {
@@ -1130,17 +1264,18 @@ html[data-motion-ready="true"] .topic-ping {
   border-left-color: var(--accent-cyan);
 }
 
-/* Deterministic Two-Row Status Bar Reservation */
+/* Deterministic Normal-Flow Status Bar Anchored to Map Bottom */
 .map-status-bar {
-  margin-top: 0.85rem;
-  padding-top: 0.6rem;
+  flex: 0 0 auto;
+  margin-top: auto;
+  padding-top: 0.5rem;
   border-top: 1px solid var(--line-hairline);
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
-  grid-template-rows: 1.25rem 2rem;
+  grid-template-rows: 1.15rem 2rem;
   align-items: center;
   column-gap: 0.85rem;
-  row-gap: 0.15rem;
+  row-gap: 0.1rem;
   font-family: var(--font-mono);
   font-size: 0.75rem;
   color: var(--ink-secondary);
@@ -1579,7 +1714,10 @@ html[data-motion-ready="true"] .topic-ping {
 }
 
 .card-offscreen.system-card,
-.card-offscreen.system-card::after {
+.card-offscreen.system-card::after,
+.card-offscreen.update-note,
+.card-offscreen.update-note::before,
+.card-offscreen.update-note::after {
   animation-play-state: paused !important;
 }
 
@@ -1918,6 +2056,15 @@ html[data-motion-ready="true"] .topic-ping {
 /* ==========================================================================
    5. Responsive Layout (Centered 440px Mobile Sundial + Breathing Atmosphere)
    ========================================================================== */
+/* Keep the no-mask fallback after every panel's base border declaration. */
+@supports not ((mask-composite: exclude) or (-webkit-mask-composite: xor)) {
+  .research-map,
+  .update-note,
+  .system-card {
+    border-color: rgba(112, 212, 222, 0.38);
+  }
+}
+
 @media (max-width: 980px) {
   .hero-layout {
     grid-template-columns: 1fr;
@@ -1930,6 +2077,18 @@ html[data-motion-ready="true"] .topic-ping {
 }
 
 @media (max-width: 760px) {
+  .observatory-backdrop::before {
+    inset: 8px;
+  }
+
+  .sd-rim-beam {
+    filter: drop-shadow(0 0 4px rgba(112, 212, 222, 0.78));
+  }
+
+  .sd-orbit-beam {
+    filter: drop-shadow(0 0 4px rgba(148, 163, 248, 0.65));
+  }
+
   .observatory-aurora-stage {
     width: 460px;
     height: 460px;
@@ -2032,11 +2191,15 @@ html[data-motion="paused"] *::after {
   .sd-primary-carrier,
   .sd-shadow-carrier,
   .sd-orbital-carrier,
+  .sd-rim-beam,
+  .sd-orbit-beam,
   .observatory-aurora-lobe,
   .sundial-3d-assembly,
   .observatory-horizon,
+  .observatory-backdrop::after,
   .research-map,
   .research-map::after,
+  .update-note,
   .update-note::before,
   .update-note::after,
   .system-card,

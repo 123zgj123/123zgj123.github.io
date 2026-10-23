@@ -138,7 +138,7 @@
   const topicDots = Array.from(document.querySelectorAll('.topic-dot'));
   const workDots = Array.from(document.querySelectorAll('.work-dot'));
   const linkableEntries = Array.from(document.querySelectorAll('.pub-entry, .system-card'));
-  const systemCards = Array.from(document.querySelectorAll('.system-card'));
+  const animatedPanels = Array.from(document.querySelectorAll('.system-card, .update-note'));
   const statusBar = document.getElementById('map-status-bar');
   const statusText = document.getElementById('map-status-text');
   const jumpLink = document.getElementById('map-jump-link');
@@ -465,13 +465,13 @@
     }
   }
 
-  if ('IntersectionObserver' in window && systemCards.length > 0) {
+  if ('IntersectionObserver' in window && animatedPanels.length > 0) {
     const cardObserver = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         entry.target.classList.toggle('card-offscreen', !entry.isIntersecting);
       });
     }, { threshold: 0 });
-    systemCards.forEach((card) => cardObserver.observe(card));
+    animatedPanels.forEach((panel) => cardObserver.observe(panel));
   }
 
   // 3. Hash Reveal & Target Navigation
