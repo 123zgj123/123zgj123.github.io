@@ -14,7 +14,7 @@ A single-page academic website with locally hosted fonts and no build step, fram
 
 The page pairs Source Serif 4 headings with Source Sans 3 reading text on a deep navy canvas (`#0A101B`). A large translucent orbital sundial is centered behind the viewport: an inclined dial, a raised two-face gnomon, and a differently tilted orbit give it spatial depth. Cyan and periwinkle light breathe through the scene. Glass surfaces are limited to the research map, acceptance notice, and featured software; publications and experience remain open reading sections. The symbol is decorative, not a visualization of research metrics or a claim of inevitable progress.
 
-- The research map connects three research themes to eight papers and two software projects. Hover or keyboard focus highlights the associated connections; selecting a theme keeps its references marked. Work links navigate to real entries on this page. The map never silently filters the publication list.
+- The research map connects three research themes to ten papers and two software projects. Hover or keyboard focus highlights the associated connections; selecting a theme keeps its references marked. Work links navigate to real entries on this page. The map never silently filters the publication list.
 - On desktop, the research-map card and the name share the same top edge. The introduction, Publications heading, and paper titles share one left reading axis. The map keeps a compact, reserved status area so selection never shifts the page.
 - Publications can be filtered by status. Incoming links reveal papers hidden by a filter, and links to earlier work open its disclosure automatically. BibTeX is readable, downloadable, and explicitly copyable.
 - Touch layouts, visible keyboard focus, reduced-motion preferences, no-JavaScript reading, and print styles are supported. Decorative SVG paths are excluded from the accessibility tree.
@@ -24,7 +24,7 @@ The page pairs Source Serif 4 headings with Source Sans 3 reading text on a deep
 
 - The sundial stays centered while reading every section. Its primary trace, cast shadow, and aurora carrier share a 90-second rotation; a secondary orbit counter-rotates over 110 seconds. The light breathes over 14 seconds and the assembly subtly tilts over 16 seconds. No per-frame JavaScript is used for the background.
 - Two luminous arcs travel around the sundial's primary and inclined secondary rings over 9 and 11 seconds. A fine viewport frame and an independent 10-second edge glow hold the composition together without covering text.
-- Ten interaction-triggered SVG beam paths and three staggered topic-node halos follow the actual research-map geometry. The map, acceptance notice, and featured software pause their ornaments when offscreen.
+- Twelve interaction-triggered SVG beam paths and three staggered topic-node halos follow the actual research-map geometry. The map, acceptance notice, and featured software pause their ornaments when offscreen.
 - The research map, acceptance notice, and featured software have dual cyan/periwinkle travelling rim highlights and separate breathing halos. The halo is not clipped inside the border mask. Browsers without composite masks retain a static visible border. The acceptance dot is decorative, not a live-computation indicator.
 - A visible Pause/Resume motion control remembers the visitor's preference when storage is available. It stops background, node, and card motion without disabling content controls. System reduced-motion preferences take priority, including changes during a visit; hidden tabs pause animation.
 - Mobile retains a smaller centered sundial and its breathing light. No-JavaScript and reduced-motion views keep a static composition. External action arrows and navigation/filter underlines use small eased transitions without moving paper titles.
@@ -41,11 +41,11 @@ Open http://127.0.0.1:8765. GitHub Pages serves the root of `main` at https://12
 
 ## Content maintenance
 
-Keep paper titles, roles, statuses, summaries, public links, and bibliography files synchronized. Describe empirical results within their tested scope. The current eight main papers remain visible by default; older work may be disclosed within the same page.
+Keep paper titles, roles, statuses, summaries, public links, and bibliography files synchronized. Describe empirical results within their tested scope. The current ten main papers remain visible by default; older work may be disclosed within the same page.
 
-The owner supplied the current publication statuses: ECA and STARS accepted to Findings of EMNLP 2026; six recent manuscripts Under Review without target venues. The three newest manuscripts are first-author work per the owner's confirmation. World-model research is exploratory; forthcoming doctoral enrollment is not displayed.
+The owner supplied the current publication statuses: ECA and STARS accepted to Findings of EMNLP 2026; six manuscripts Under Review without target venues, plus two November arXiv preprints. The three newest manuscripts are first-author work per the owner's confirmation. World-model research is exploratory; forthcoming doctoral enrollment is not displayed.
 
-Earlier publication records and experience were carried over from the existing site. The unverified inherited “CVPR Findings” label for Spatial Causal Prediction in Video is intentionally omitted. Confirm missing publication metadata before adding it. The bundled CV is the available October 19, 2026 English PDF.
+Earlier publication records and experience were carried over from the existing site. The unverified inherited “CVPR Findings” label for Spatial Causal Prediction in Video is intentionally omitted. Confirm missing publication metadata before adding it. The bundled CV is the November 23, 2026 two-page English edition.
 
 ## Implementation provenance
 

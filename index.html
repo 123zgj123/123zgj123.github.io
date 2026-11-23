@@ -164,7 +164,7 @@
       <div class="hero-layout">
         <div class="hero-prose">
           <h1 class="hero-name">Guijia Zhang <span class="zh-name" lang="zh">张桂嘉</span></h1>
-          <p>I study how AI agents use evidence to form beliefs and choose actions. My work examines failures that can arise between these steps: <a href="#eca">unsupported observations authorizing tool use</a>, stale inference state surviving a rollback, and <a href="#divergence">evaluation metrics that miss changes in behavior</a>.</p>
+          <p>I study how AI agents use evidence and when that evidence justifies an action. My work on <a href="#eca">tool use</a> asks what an agent should verify before it acts. My recent experiments ask whether a model can <a href="#figure-text">spot a contradiction between a figure and the paper that cites it</a>, and how to tell when a safety judgment depends on <a href="#scene-intent">both the image and the user’s intent</a>.</p>
           <p>I also develop <a href="#paperfuture">PaperFuture</a> and <a href="#farfield-v2">FarField-v2</a>, research software for working through literature, competing hypotheses, and experiments. More recently, I have been exploring how world models might help plan learning on verifiable code and mathematics tasks.</p>
 
           <p class="update-note"><a href="#eca">ECA</a> and <a href="#stars">STARS</a> were accepted to <strong>Findings of EMNLP 2026</strong>.</p>
@@ -191,6 +191,8 @@
               <path class="map-curve" data-topic="reliability" data-work="commitment" d="M 138 92 C 178 92, 184 142, 224 142" />
               <path class="map-curve" data-topic="reliability" data-work="regulation" d="M 138 92 C 178 92, 184 172, 224 172" />
               <!-- Evaluation curves -->
+              <path class="map-curve" data-topic="evaluation" data-work="figure-text" d="M138 232 Q178 232 224 200"/>
+              <path class="map-curve" data-topic="evaluation" data-work="scene-intent" d="M138 232 Q178 232 224 220"/>
               <path class="map-curve" data-topic="evaluation" data-work="divergence" d="M 138 232 C 178 232, 184 216, 224 216" />
               <path class="map-curve" data-topic="evaluation" data-work="judge" d="M 138 232 C 178 232, 184 248, 224 248" />
               <!-- Automated research curves -->
@@ -203,6 +205,8 @@
               <circle class="map-dot topic-dot" data-topic="automated" cx="138" cy="312" r="3" />
 
               <!-- Work anchor dots -->
+              <circle class="map-dot work-dot" data-topic="evaluation" data-work="figure-text" cx="224" cy="200" r="2.25"/>
+              <circle class="map-dot work-dot" data-topic="evaluation" data-work="scene-intent" cx="224" cy="220" r="2.25"/>
               <circle class="map-dot work-dot" data-topic="reliability" data-work="eca" cx="224" cy="22" r="2.25" />
               <circle class="map-dot work-dot" data-topic="reliability" data-work="stars" cx="224" cy="52" r="2.25" />
               <circle class="map-dot work-dot" data-topic="reliability" data-work="rollback" cx="224" cy="82" r="2.25" />
@@ -238,11 +242,13 @@
                 <div class="map-topic-cell">
                   <button type="button" class="map-topic-btn" data-topic-btn="evaluation" aria-pressed="false" hidden>
                     <span class="topic-name">Evaluation</span>
-                    <span class="topic-meta">2 papers</span>
+                    <span class="topic-meta">4 papers</span>
                   </button>
                   <span class="map-topic-static">Evaluation</span>
                 </div>
                 <ul class="map-works" aria-label="Evaluation works">
+                  <li><a href="#figure-text" class="map-work-link" data-work-link="figure-text" data-topic="evaluation">Figure–text verification</a></li>
+                  <li><a href="#scene-intent" class="map-work-link" data-work-link="scene-intent" data-topic="evaluation">Scene and intent in safety</a></li>
                   <li><a href="#divergence" class="map-work-link" data-work-link="divergence" data-topic="evaluation">Divergence · Decision validity</a></li>
                   <li><a href="#judge" class="map-work-link" data-work-link="judge" data-topic="evaluation">Judge Replacement · Score reuse</a></li>
                 </ul>
@@ -278,9 +284,10 @@
       <div class="section-header">
         <h2>Publications</h2>
         <div class="filter-controls" role="group" aria-label="Filter main publications" hidden>
-          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All (8)</button>
+          <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All (10)</button>
           <button type="button" class="filter-btn" data-filter="accepted" aria-pressed="false">Accepted (2)</button>
           <button type="button" class="filter-btn" data-filter="review" aria-pressed="false">Under Review (6)</button>
+          <button type="button" class="filter-btn" data-filter="preprint" aria-pressed="false">Preprints (2)</button>
         </div>
       </div>
       <p id="filter-live-status" class="sr-only" role="status" aria-live="polite"></p>
@@ -365,6 +372,22 @@
         </article>
 
         <!-- 3. Divergence -->
+        <article class="pub-entry" id="figure-text" data-status="preprint" data-first="true" data-topic="evaluation">
+          <h3><a href="https://arxiv.org/abs/2611.24353">When Figures Disagree with Text: Evaluating Autonomous Visual Evidence Verification in Scientific Papers</a></h3>
+          <div class="pub-byline"><span class="pub-authors"><strong>Guijia Zhang</strong>, Hongbo Qiu, Jiajun Zha, et al.</span>
+            <div class="pub-meta"><span class="status-pill review">arXiv preprint</span><span class="meta-role">First listed · Core contributor</span></div>
+          </div>
+          <p class="pub-summary">Can a reviewer find a figure that contradicts the text without being told where to look? Six multimodal models reviewed 31 full manuscripts with documented inconsistencies. Of 1,445 reviews, 60.6% mentioned the relevant figure and 3.3% earned credit for diagnosing the contradiction. In a separate controlled test, simply naming the figure raised the rubric-accepted diagnosis rate from 4.3% to 20.4%.</p>
+        </article>
+
+        <article class="pub-entry" id="scene-intent" data-status="preprint" data-first="true" data-topic="evaluation">
+          <h3><a href="https://arxiv.org/abs/2611.27339">Unimodal Shortcuts and Joint Scene-Intent Dependence in Vision-Language Safety Representations</a></h3>
+          <div class="pub-byline"><span class="pub-authors"><strong>Guijia Zhang</strong>, Hongbo Qiu, Guohao Cai, et al.</span>
+            <div class="pub-meta"><span class="status-pill review">arXiv preprint</span><span class="meta-role">First author · Core contributor</span></div>
+          </div>
+          <p class="pub-summary">A request to serve a dish can be safe or unsafe depending on the food in the photograph. Five public benchmarks admitted shortcuts based on one modality. We crossed safe and hazardous scenes with requests to observe or act. On this control, probes on two frozen models reached 95.8% and 93.0% group-ranking accuracy against a 50% single-modality ceiling. Separately encoded image and text states recovered much of the signal, and the probes transferred poorly to new images.</p>
+        </article>
+
         <article class="pub-entry" id="divergence" data-status="review" data-first="true" data-topic="evaluation">
           <h3>When Token-Level Divergence Misranks Prompt-Injection Robustness</h3>
           <div class="pub-byline">

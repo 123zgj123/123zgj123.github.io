@@ -102,9 +102,7 @@
     let visibleCount = 0;
     pubEntries.forEach((entry) => {
       const status = entry.getAttribute('data-status');
-      let match = true;
-      if (filterKey === 'accepted') match = status === 'accepted';
-      else if (filterKey === 'review') match = status === 'review';
+      const match = filterKey === 'all' || status === filterKey;
       entry.hidden = !match;
       if (match) visibleCount += 1;
     });
@@ -146,7 +144,7 @@
 
   const TOPIC_META = {
     reliability: { label: 'Agent reliability (6 papers)', href: '#eca', text: 'View related papers ↓' },
-    evaluation: { label: 'Evaluation (2 papers)', href: '#divergence', text: 'View related papers ↓' },
+    evaluation: { label: 'Evaluation (4 papers)', href: '#figure-text', text: 'View related papers ↓' },
     automated: { label: 'Automated research (2 systems)', href: '#paperfuture', text: 'View research software ↓' }
   };
 
