@@ -43,7 +43,7 @@ Open http://127.0.0.1:8765. GitHub Pages serves the root of `main` at https://12
 
 Keep paper titles, roles, statuses, summaries, public links, and bibliography files synchronized. Describe empirical results within their tested scope. The current ten main papers remain visible by default; older work may be disclosed within the same page.
 
-The owner supplied the current publication statuses: ECA and STARS accepted to Findings of EMNLP 2026; six manuscripts Under Review without target venues, plus two November arXiv preprints. The three newest manuscripts are first-author work per the owner's confirmation. World-model research is exploratory; forthcoming doctoral enrollment is not displayed.
+The owner supplied the current publication statuses: ECA and STARS accepted to Findings of EMNLP 2026; four other selected manuscripts listed as Under Review and four selected entries listed by their public arXiv records. The three newest manuscripts are first-author work per the owner's confirmation. World-model research is exploratory; forthcoming doctoral enrollment is not displayed.
 
 Earlier publication records and experience were carried over from the existing site. The unverified inherited “CVPR Findings” label for Spatial Causal Prediction in Video is intentionally omitted. Confirm missing publication metadata before adding it. The bundled CV is the November 23, 2026 two-page English edition.
 

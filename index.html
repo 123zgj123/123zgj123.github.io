@@ -164,8 +164,9 @@
       <div class="hero-layout">
         <div class="hero-prose">
           <h1 class="hero-name">Guijia Zhang <span class="zh-name" lang="zh">张桂嘉</span></h1>
-          <p>I study how AI agents use evidence and when that evidence justifies an action. My work on <a href="#eca">tool use</a> asks what an agent should verify before it acts. My recent experiments ask whether a model can <a href="#figure-text">spot a contradiction between a figure and the paper that cites it</a>, and how to tell when a safety judgment depends on <a href="#scene-intent">both the image and the user’s intent</a>.</p>
-          <p>I also develop <a href="#paperfuture">PaperFuture</a> and <a href="#farfield-v2">FarField-v2</a>, research software for working through literature, competing hypotheses, and experiments. More recently, I have been exploring how world models might help plan learning on verifiable code and mathematics tasks.</p>
+          <p>I study what AI agents rely on when they act. In my work on <a href="#eca">tool use</a>, I ask which observations justify granting an agent permission. In experiments on <a href="#gui">GUI agents</a> and <a href="#rollback">rollback</a>, I trace decisions back to the interface or memory state that produced them.</p>
+          <p>I also study the evidence behind evaluations. Can a model <a href="#figure-text">find a figure that contradicts a paper’s text</a>? Does a safety score depend on <a href="#scene-intent">both the image and the request</a>? When we <a href="#judge">upgrade an LLM judge</a>, can its scores still distinguish strong research proposals from flawed ones?</p>
+          <p>I build <a href="#paperfuture">PaperFuture</a> to turn findings from the literature into testable hypotheses, and <a href="#farfield-v2">FarField-v2</a> to track the experiments that support or challenge them.</p>
 
           <p class="update-note"><a href="#eca">ECA</a> and <a href="#stars">STARS</a> were accepted to <strong>Findings of EMNLP 2026</strong>.</p>
 
@@ -231,7 +232,7 @@
                 <ul class="map-works" aria-label="Agent reliability works">
                   <li><a href="#eca" class="map-work-link" data-work-link="eca" data-topic="reliability">ECA · Evidence gates</a></li>
                   <li><a href="#stars" class="map-work-link" data-work-link="stars" data-topic="reliability">STARS · Activation risk</a></li>
-                  <li><a href="#rollback" class="map-work-link" data-work-link="rollback" data-topic="reliability">Rollback · Cache provenance</a></li>
+                  <li><a href="#rollback" class="map-work-link" data-work-link="rollback" data-topic="reliability">Rollback · Retained KV state</a></li>
                   <li><a href="#gui" class="map-work-link" data-work-link="gui" data-topic="reliability">GUI Belief · Pixels vs. DOM</a></li>
                   <li><a href="#commitment" class="map-work-link" data-work-link="commitment" data-topic="reliability">Commitment Window</a></li>
                   <li><a href="#regulation" class="map-work-link" data-work-link="regulation" data-topic="reliability">Skill Regulation</a></li>
@@ -250,7 +251,7 @@
                   <li><a href="#figure-text" class="map-work-link" data-work-link="figure-text" data-topic="evaluation">Figure–text verification</a></li>
                   <li><a href="#scene-intent" class="map-work-link" data-work-link="scene-intent" data-topic="evaluation">Scene and intent in safety</a></li>
                   <li><a href="#divergence" class="map-work-link" data-work-link="divergence" data-topic="evaluation">Divergence · Decision validity</a></li>
-                  <li><a href="#judge" class="map-work-link" data-work-link="judge" data-topic="evaluation">Judge Replacement · Score reuse</a></li>
+                  <li><a href="#judge" class="map-work-link" data-work-link="judge" data-topic="evaluation">Judge upgrades · Score resolution</a></li>
                 </ul>
               </div>
 
@@ -286,8 +287,8 @@
         <div class="filter-controls" role="group" aria-label="Filter main publications" hidden>
           <button type="button" class="filter-btn" data-filter="all" aria-pressed="true">All (10)</button>
           <button type="button" class="filter-btn" data-filter="accepted" aria-pressed="false">Accepted (2)</button>
-          <button type="button" class="filter-btn" data-filter="review" aria-pressed="false">Under Review (6)</button>
-          <button type="button" class="filter-btn" data-filter="preprint" aria-pressed="false">Preprints (2)</button>
+          <button type="button" class="filter-btn" data-filter="review" aria-pressed="false">Under Review (4)</button>
+          <button type="button" class="filter-btn" data-filter="preprint" aria-pressed="false">Preprints (4)</button>
         </div>
       </div>
       <p id="filter-live-status" class="sr-only" role="status" aria-live="polite"></p>
@@ -334,7 +335,7 @@
 
         <!-- 2. STARS -->
         <article class="pub-entry" id="stars" data-status="accepted" data-first="true" data-topic="reliability">
-          <h3><a href="https://arxiv.org/abs/2604.10286">STARS: Skill Triage via Activation Risk Scoring for LLM Agents</a></h3>
+          <h3><a href="https://arxiv.org/abs/2604.10286">STARS: Skill-Triggered Audit for Request-Conditioned Invocation Safety in Agent Systems</a></h3>
           <div class="pub-byline">
             <p class="pub-authors"><strong>Guijia Zhang</strong>, Shu Yang, Xilin Gong, Di Wang</p>
             <div class="pub-meta">
@@ -345,7 +346,7 @@
               <span class="meta-topic">Invocation-time risk</span>
             </div>
           </div>
-          <p class="pub-summary">The risk of invoking a skill depends on the current request, so a tool-level assessment alone is not enough. STARS combines a static capability prior, a request-conditioned risk scorer, and calibrated fusion to allocate a limited review budget across skill activations. On the 3,000-record SIA-Bench, held-out high-risk AUPRC improves by 12% over the strongest proxy baseline.</p>
+          <p class="pub-summary">STARS estimates how risky a particular skill call is under the current request and runtime context. On held-out indirect prompt injections in SIA-Bench, combining static and contextual scores reached 0.439 high-risk AUPRC, compared with 0.405 for the contextual scorer and 0.380 for the strongest static baseline. Gains were smaller on the in-distribution test split.</p>
           <div class="pub-actions">
             <a href="https://arxiv.org/abs/2604.10286">arXiv ↗</a>
             <a href="https://arxiv.org/pdf/2604.10286">PDF ↗</a>
@@ -354,7 +355,7 @@
               <summary>BibTeX</summary>
               <div class="bib-panel">
                 <pre><code>@misc{zhang2026stars,
-  title = {{STARS}: Skill Triage via Activation Risk Scoring for LLM Agents},
+  title = {{STARS}: Skill-Triggered Audit for Request-Conditioned Invocation Safety in Agent Systems},
   author = {Guijia Zhang and Shu Yang and Xilin Gong and Di Wang},
   year = {2026},
   eprint = {2604.10286},
@@ -403,33 +404,41 @@
         </article>
 
         <!-- 4. Rollback -->
-        <article class="pub-entry" id="rollback" data-status="review" data-first="true" data-topic="reliability">
-          <h3>Rollback as Authority Revocation: Binding Caches to Committed History</h3>
+        <article class="pub-entry" id="rollback" data-status="preprint" data-first="true" data-topic="reliability">
+          <h3><a href="https://arxiv.org/abs/2608.15939">Aborted but Not Forgotten: KV-Cache Retention Breaks Rollback Consistency in Language Agents</a></h3>
           <div class="pub-byline">
+            <p class="pub-authors"><strong>Guijia Zhang</strong>, Harry Yang</p>
             <div class="pub-meta">
-              <span class="status-pill review">Under Review</span>
+              <span class="status-pill review">arXiv preprint</span>
               <span class="meta-sep" aria-hidden="true">·</span>
               <span class="meta-role">First author</span>
               <span class="meta-sep" aria-hidden="true">·</span>
-              <span class="meta-topic">State provenance</span>
+              <span class="meta-topic">Rollback consistency</span>
             </div>
           </div>
-          <p class="pub-summary">Removing a branch from a conversation does not necessarily revoke its influence if later decisions reuse that branch’s KV-cache state. This work defines a provenance contract binding KV-cache reuse to committed history and shows that retained prefixes change authorization outcomes in 43 of 63 tested settings across seven model families. In these tests, a reference adapter restores authorized actions in all 36 edited histories and preserves them in 18 no-op controls.</p>
+          <p class="pub-summary">An application can erase a rejected branch from the conversation while its serving layer still holds that branch in memory. We fixed the decision-step tokens and varied only the KV cache. Across seven model families, retaining stale state changed the protected action in 25 of 63 settings. Rebuilding the cache from committed history closed every observed case.</p>
+          <details class="bib-disclosure"><summary>Related manuscript</summary>
+            <p><em>Rollback as Authority Revocation: Binding Caches to Committed History</em> studies how to bind cache reuse to the committed prefix. First author · Under Review.</p>
+          </details>
         </article>
 
         <!-- 5. Judge -->
-        <article class="pub-entry" id="judge" data-status="review" data-first="true" data-topic="evaluation">
-          <h3>When Can Historical Scores Be Reused After Judge Replacement?</h3>
+        <article class="pub-entry" id="judge" data-status="preprint" data-first="true" data-topic="evaluation">
+          <h3><a href="https://arxiv.org/abs/2610.32986">LLM-as-a-Judge Version Shift: The Instrument Changed, Not the Standard</a></h3>
           <div class="pub-byline">
+            <p class="pub-authors"><strong>Guijia Zhang</strong>, Harry Yang</p>
             <div class="pub-meta">
-              <span class="status-pill review">Under Review</span>
+              <span class="status-pill review">arXiv preprint</span>
               <span class="meta-sep" aria-hidden="true">·</span>
               <span class="meta-role">First author</span>
               <span class="meta-sep" aria-hidden="true">·</span>
-              <span class="meta-topic">Judge replacement</span>
+              <span class="meta-topic">Measurement across versions</span>
             </div>
           </div>
-          <p class="pub-summary">When an LLM judge is replaced, historical scores do not automatically support the same downstream decisions. This study separates decision compatibility, finite-population certification, and economic usefulness to derive an audit-budget frontier. Across 18 previously recorded gateway comparisons, certified reuse saves under 3% of incoming calls at 10% tolerance and the original audit budget, while failed audits can increase rescoring costs.</p>
+          <p class="pub-summary">We gave the same research proposals to adjacent versions of judges from three model families. An upgrade could change how a judge weighed criteria or how finely it distinguished proposals. In one transition, 93% of scores fell on a single value. A stratified audit using about 200 calls identified the type of change before deployment.</p>
+          <details class="bib-disclosure"><summary>Related manuscript</summary>
+            <p><em>When Can Historical Scores Be Reused After Judge Replacement?</em> studies when an audit can certify that previously assigned scores support the same decisions. First author · Under Review.</p>
+          </details>
         </article>
 
         <!-- 6. GUI -->
